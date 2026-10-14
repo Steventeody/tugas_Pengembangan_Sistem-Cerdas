@@ -1,0 +1,915 @@
+waktu,anggota,jenis,model,nomor_kombinasi,persona,prompt,jawaban,input_tokens,output_tokens,thinking_tokens,total_tokens,temperature,top_p,top_k,kualitas,total_kumulatif
+2026-10-12 17:39:58,budi,eksperimen,gemini-3.8-flash,1,,Tulis artikel blog tentang wisata di Yogyakarta. Jangan gunakan contoh apa pun.,"**Menemukan Kembali Ketenangan: Alasan Mengapa Yogyakarta Selalu Dirindukan**
+
+Ada sebuah ungkapan yang sering terdengar bahwa kota ini tidak hanya terbuat dari susunan jalan dan bangunan, melainkan tersusun dari rindu, kenangan, dan suasana hangat yang sulit dicari tandingannya. Bepergian ke Daerah Istimewa ini selalu menawarkan pengalaman yang melampaui sekadar liburan biasa; ini adalah perjalanan untuk menenangkan pikiran dan meresapi kembali ritme kehidupan yang lebih bersahaja.
+
+Bagi Anda yang merencanakan liburan, berikut adalah gambaran pesona yang menjadikan wilayah ini begitu istimewa untuk dijelajahi.
+
+### Denyut Tradisi yang Tetap Hidup
+Daya tarik utama dari daerah ini berakar pada kekayaan sejarah dan budayanya. Di sini, warisan masa lalu tidak sekadar dipajang di balik etalase kaca, melainkan hidup berdampingan secara harmonis dengan peradaban modern. 
+
+Pengunjung dapat merasakan atmosfer agung dari peninggalan masa kerajaan, mengagumi arsitektur klasik yang sarat makna filosofis, serta menyaksikan pertunjukan seni tari dan musik tradisional yang masih dipelihara secara turun-temurun. Berjalan di kawasan cagar budaya akan membawa Anda seolah melintasi lorong waktu, di mana setiap ornamen dan tata ruang kota memiliki cerita tersendiri.
+
+### Keindahan Bentang Alam dari Puncak hingga Pesisir
+Kekayaan geografis wilayah ini menawarkan paket lengkap bagi para pencinta alam. Kontur tanahnya membentang dari dataran tinggi yang sejuk di sisi utara hingga garis pantai yang membentang luas di sisi selatan.
+
+Di kawasan perbukitan dan lereng gunung, udara segar dan pemandangan hijau nan asri menjadi pelarian sempurna dari kepenatan kota besar. Sementara itu, kawasan pesisirnya menawarkan panorama tebing-tebing karang, hamparan pasir yang luas, serta momen matahari terbenam yang syahdu. Keberagaman bentang alam ini memastikan bahwa setiap jenis pelancong—baik yang mencari ketenangan maupun petualangan terbuka—akan menemukan sudut favoritnya masing-masing.
+
+### Menyelami Rasa dalam Kesederhanaan
+Perjalanan tidak akan lengkap tanpa menjelajahi ragam kulinernya. Karakteristik hidangan lokal didominasi oleh perpaduan rasa manis, gurih, dan rempah yang lembut, mencerminkan sifat masyarakatnya yang tenang dan bersahabat.
+
+Pengalaman bersantap di sini tidak melulu soal kemewahan tempat, melainkan tentang suasananya. Menikmati hidangan tradisional di warung-warung pinggir jalan saat malam hari, duduk beralaskan tikar, ditemani alunan musik jalanan dan temaram lampu kota, menghadirkan keintiman tersendiri yang sangat membekas di ingatan.
+
+### Keramahan yang Menyentuh Hati
+Faktor terbesar yang membuat banyak orang selalu ingin kembali bukanlah objek wisatanya semata, melainkan manusianya. Senyum tulus, sapaan hangat, dan kesopanan warga lokal menciptakan rasa aman dan nyaman layaknya pulang ke rumah sendiri. Di tengah dunia yang bergerak serba cepat, tempo kehidupan masyarakat di sini mengajarkan pengunjung tentang seni menikmati hidup secara perlahan dan penuh rasa syukur.
+
+### Penutup
+Berlibur ke Yogyakarta adalah tentang merayakan kesederhanaan, menghargai warisan leluhur, dan memulihkan energi jiwa. Apabila Anda membutuhkan jeda dari rutinitas yang melelahkan, mengemas koper dan melangkahkan kaki menuju kota ini adalah sebuah keputusan yang tidak akan pernah Anda sesali.",16,766,995,1777,,,,good,1777
+2026-10-13 08:14:50,budi,eksperimen,gemini-3.8-flash,1.2,,Tulis artikel blog tentang wisata di Yogyakarta. Jangan sertakan informasi tentang harga tiket atau opini wisatawan.,"**Menjelajahi Yogyakarta: Harmoni Budaya, Sejarah, dan Alam di Jantung Pulau Jawa**
+
+Yogyakarta, atau kerap disapa Jogja, merupakan salah satu daerah istimewa di Indonesia yang memegang teguh identitas tradisinya di tengah arus modernisasi. Terletak di bagian selatan Pulau Jawa, wilayah ini menawarkan bentang geografis yang lengkap, mulai dari megahnya gunung berapi di utara hingga deretan pantai yang menghadap langsung ke Samudra Hindia di selatan. 
+
+Bagi Anda yang merencanakan perjalanan ke kota ini, berikut adalah ulasan mengenai berbagai destinasi utama yang mencerminkan kekayaan Yogyakarta.
+
+---
+
+### 1. Jejak Sejarah dan Warisan Budaya
+
+Sebagai pusat monarki Jawa yang masih aktif, sejarah dan budaya merupakan pilar utama pariwisata di Yogyakarta.
+
+*   **Keraton Ngayogyakarta Hadiningrat**
+    Keraton ini merupakan kediaman resmi Sultan Hamengkubuwono sekaligus pusat pemerintahan kesultanan. Kompleks ini dirancang dengan tata ruang yang sarat makna filosofis Jawa. Di dalamnya terdapat museum yang memamerkan benda-benda pusaka, gamelan, lukisan, dan pakaian adat keluarga kerajaan.
+*   **Taman Sari Water Castle**
+    Terletak tidak jauh dari Keraton, Taman Sari dulunya berfungsi sebagai taman pemandian, tempat peristirahatan, serta benteng pertahanan keluarga sultan. Struktur arsitekturnya memadukan elemen gaya Jawa dan Portugis. Salah satu bagian yang paling menonjol dari kompleks ini adalah Sumur Gumuling, sebuah bangunan melingkar bertingkat yang pernah difungsikan sebagai masjid bawah tanah.
+*   **Candi Prambanan**
+    Berlokasi di perbatasan Yogyakarta dan Jawa Tengah, Candi Prambanan adalah kompleks candi Hindu terbesar di Indonesia. Bangunan yang didirikan pada abad ke-9 ini didedikasikan untuk Trimurti (Brahma, Wisnu, dan Siwa). Candi utamanya menjulang setinggi 47 meter dan dihiasi oleh relief kisah Ramayana yang dipahat di sepanjang dindingnya.
+
+---
+
+### 2. Lanskap Alam: Dari Puncak hingga Pesisir
+
+Kondisi geografis Yogyakarta menciptakan keragaman bentang alam yang menarik untuk dijelajahi.
+
+*   **Kawasan Lereng Gunung Merapi**
+    Di bagian utara, Gunung Merapi berdiri sebagai salah satu gunung api paling aktif di dunia. Di kawasan Kaliurang dan Cangkringan, pengunjung dapat melihat sisa-sisa letusan masa lalu melalui Museum Gunungapi Merapi dan Bunker Kaliadem. Kawasan ini juga menjadi area konservasi alam dan pusat pemantauan vulkanologi.
+*   **Pantai di Pesisir Selatan**
+    Garis pantai Yogyakarta terbagi menjadi dua karakter utama. Di wilayah Bantul, Pantai Parangtritis dan Parangkusumo dikenal dengan hamparan pasir hitam vulkanik serta gumuk pasirnya. Sementara itu, di Kabupaten Gunungkidul, garis pantainya didominasi oleh tebing karst dan pasir putih, seperti di Pantai Indrayanti, Pantai Krakal, dan Pantai Pok Tunggal.
+
+---
+
+### 3. Denyut Kota dan Ruang Publik
+
+Yogyakarta memiliki sejumlah ruang publik yang memfasilitasi aktivitas sosial, seni, dan perdagangan.
+
+*   **Kawasan Malioboro**
+    Jalan Malioboro membentang dari Stasiun Tugu hingga ke Titik Nol Kilometer. Koridor ini dipenuhi oleh pertokoan batik, sentra suvenir, dan bangunan bersejarah. Jalur pedestrian yang luas kini menghubungkan wisatawan dengan Pasar Beringharjo—pasar tertua di Yogyakarta yang menjual kain, rempah, dan pakaian tradisional.
+*   **Kawasan Titik Nol Kilometer**
+    Area persimpangan ini dikelilingi oleh bangunan bergaya kolonial peninggalan era Hindia Belanda, seperti Gedung Bank Indonesia, Kantor Pos Besar, dan Gedung BNI. Area ini sering menjadi ruang publik terbuka untuk pertunjukan seni jalanan dan kegiatan komunitas lokal.
+
+---
+
+### Catatan Logistik dan Aksesibilitas
+
+Yogyakarta dapat diakses melalui Bandara Internasional Yogyakarta (YIA) di Kulon Progo, serta dua stasiun kereta api utama: Stasiun Tugu (untuk kereta eksekutif dan antarkota) dan Stasiun Lempuyangan (untuk kelas ekonomi dan lokal). 
+
+Untuk mobilitas di dalam kota, tersedia jaringan bus perkotaan Trans Jogja, moda transportasi berbasis aplikasi, serta transportasi tradisional seperti *andong* (kereta kuda) dan becak yang beroperasi di sekitar kawasan cagar budaya. Musim kemarau antara Mei hingga September biasanya menjadi waktu dengan cuaca paling stabil untuk aktivitas luar ruangan di Yogyakarta.",21,997,919,1937,,,,good,3714
+2026-10-13 08:22:00,budi,eksperimen,gemini-3.8-flash,2.2,,Tulis artikel blog 200 kata tentang wisata di Yogyakarta. Jangan bahas harga tiket atau opini wisatawan.,"**Pesona Wisata Yogyakarta: Harmoni Budaya dan Keindahan Alam**
+
+Yogyakarta merupakan salah satu destinasi utama di Indonesia yang menawarkan perpaduan antara kekayaan sejarah, tradisi budaya, dan keindahan alam. Kota ini menghadirkan pengalaman perjalanan yang beragam, mulai dari eksplorasi cagar budaya bersejarah hingga keindahan lanskap yang membentang dari kawasan utara hingga selatan.
+
+Di pusat kota, peninggalan masa lampau terpelihara dengan baik melalui Keraton Ngayogyakarta Hadiningrat dan Taman Sari. Kawasan cagar budaya ini memperlihatkan arsitektur klasik Jawa yang sarat nilai filosofis. Bergerak ke arah perbatasan, berdiri Candi Prambanan, kompleks candi Hindu terbesar di Indonesia yang memamerkan kemegahan relief batu bernilai seni tinggi.
+
+Bagi penikmat wisata alam, kawasan utara menyuguhkan kegagahan Gunung Merapi dengan panorama lereng vulkanik dan kawasan Kaliurang yang asri. Sementara itu, sisi selatan Yogyakarta menyajikan bentang pesisir Samudra Hindia yang luas, mulai dari Pantai Parangtritis hingga deretan pantai berpasir putih di kawasan Gunungkidul. Dataran tinggi seperti Hutan Pinus Mangunan di Bantul juga melengkapi variasi lanskap dengan hamparan pepohonan rindang dan udara perbukitan.
+
+Keragaman destinasi ini menjadikan Yogyakarta sebagai wilayah yang merangkum warisan budaya adiluhung serta panorama alam yang memikat dalam satu kesatuan geografis.",23,313,1110,1446,,,,good,5160
+2026-10-13 08:28:29,budi,eksperimen,gemini-3.8-flash,3,,Kamu adalah pemandu wisata yang ramah dan penuh semangat. Tulis artikel blog tentang wisata di Yogyakarta,"**Judul: Sugeng Rawuh! Menjelajahi Magisnya Jogja: Dari Jejak Sejarah sampai Sunset yang Bikin Gagal Move On!**
+
+Halo, Sobat Petualang! 
+
+*Sugeng rawuh ing Ngayogyakarta Hadiningrat!* Selamat datang di kota yang katanya terbuat dari rindu, pulang, dan angkringan. Perkenalkan, saya pemandu wisata virtual kamu hari ini yang bakal menemani—dan pastinya menularkan semangat—untuk menjelajahi setiap sudut kota yang istimewa ini. 
+
+Pernah dengar kan, orang bilang sekali ke Jogja pasti pengen balik lagi? Itu bukan mitos, lho! Jogja punya magnet magis yang bikin siapa saja jatuh hati. Yuk, kencangkan tali sepatumu, siapkan kameramu, dan mari kita mulai petualangan seru ini! *Let’s go!*
+
+---
+
+### 1. Menyelami Lorong Waktu di Tamansari dan Keraton
+Pemberhentian pertama kita: jantung kebudayaan Jawa! Kita mulai dari **Keraton Yogyakarta**. Begitu melangkah masuk, kamu akan langsung merasakan aura kedamaian dan keagungan masa lalu. Abdi dalem yang ramah dengan pakaian tradisionalnya siap menyapa kita dengan senyuman paling tulus.
+
+Tak jauh dari situ, kita jalan kaki sedikit menuju **Taman Sari Water Castle**. Tempat ini dulunya adalah pemandian pribadi para putri raja. Keren banget, kan? Jangan lupa siapkan pose terbaikmu saat kita melewati *Sumur Gumuling*, masjid bawah tanah dengan arsitektur melingkar yang super estetik. Cahaya matahari yang masuk dari celah atapnya? *Magical!* Foto kamu dijamin bakal panen *likes* di Instagram!
+
+---
+
+### 2. Pacu Adrenalin: Menembus Debu dengan Lava Tour Merapi!
+Cukup bernostalgia dengan sejarah, sekarang saatnya kita bikin jantung berdegup kencang! Kita meluncur ke arah utara, tepat di kaki Gunung Merapi yang megah. 
+
+Naik mobil Jeep 4x4 terbuka, angin pegunungan yang sejuk bakal menerpa wajahmu saat sang sopir mulai bermanuver di jalanan berbatu. Kita akan mengunjungi *Museum Sisa Hartaku* yang menyentuh hati, melihat langsung Bunker Kaliadem, dan puncaknya: basah-basahan bermanuver di Sungai Kalikuning! Teriak yang keras, ya! Lepaskan semua penatmu di sini!
+
+---
+
+### 3. ""Ngadem"" dan Berburu Sunset di Bukit Paralayang Watugupit
+Setelah seharian berpetualang, tubuh kita butuh diisi ulang dengan pemandangan yang menenangkan jiwa. Kita langsung meluncur ke arah selatan menuju **Bukit Paralayang Watugupit**, Gunungkidul. 
+
+Bayangkan ini: duduk di atas tebing batu, menyeruput kelapa muda dingin, sambil menatap deburan ombak Pantai Parangtritis dari ketinggian. Saat matahari mulai turun perlahan dan langit berubah warna menjadi gradasi jingga-keunguan… *wah*, rasanya waktu berhenti berputar. Ini adalah momen sunset terbaik di Jogja yang dijamin bikin kamu merinding saking indahnya!
+
+---
+
+### 4. Menutup Hari: Romansa Malioboro & Kenikmatan Kuliner Malam
+Belum ke Jogja namanya kalau belum menyusuri trotoar **Jalan Malioboro** di malam hari! Suasananya selalu hidup. Alunan musik dari musisi jalanan yang berbakat bakal menemani langkah kaki kita berburu oleh-oleh batik dan bakpia kukus.
+
+Perut mulai keroncongan? Tenang, Jogja adalah surga kuliner! 
+* Buat kamu pencinta pedas, kita wajib mampir ke **Gudeg Mercon Bu Tinah**—sensasi manis gurih gudeg berpadu dengan cabai rawit yang meledak di lidah!
+* Atau mau yang syahdu? Duduk lesehan di **Angkringan Kopi Joss**, memesan nasi kucing sambil menyeruput kopi hitam panas yang dicelup arang membara. *Cesss!* Hangatnya pas banget buat menutup malam yang panjang.
+
+---
+
+### Tips Spesial dari Pemandu Wisata:
+1. **Sapa dengan Senyuman:** Orang Jogja itu ramah luar biasa. Jangan ragu menyapa dengan *""Nuwun sewu""* (permisi) atau *""Matur nuwun""* (terima kasih). Dijamin kamu bakal dibalas dengan senyum paling lebar!
+2. **Sewa Motor:** Kalau mau bebas macet dan bisa masuk ke gang-gang kecil yang estetik, sewa motor adalah pilihan terbaik.
+3. **Bawa Baju Ganti:** Selalu siapkan baju ganti di ransel, terutama kalau jadwalmu ada ke Merapi atau pantai.
+
+---
+
+**Jogja Menunggumu!**
+
+Nah, itu tadi sekilas bocoran keseruan yang bisa kamu dapatkan di Yogyakarta. Percayalah, kata-kata dan foto saja tidak pernah cukup untuk menggambarkan cantiknya kota ini. Kamu harus datang dan merasakannya sendiri!
+
+Jadi, kapan jadwal liburmu? Koper sudah siap? Yuk, pesan tiketmu sekarang, dan saya tunggu kedatanganmu di Stasiun Tugu, ya! *Sampai jumpa di Jogja, Sahabat!*",21,1155,1084,2260,,,,good,7420
+2026-10-13 08:32:15,budi,eksperimen,gemini-3.8-flash,3.2,,Kamu adalah pemandu wisata yang ramah dan penuh semangat. Tulis artikel blog tentang wisata di Yogyakarta. Jangan bahas harga tiket,"**Sugeng Rawuh di Jogja! Menemukan Keajaiban dan Kehangatan di Kota Istimewa**
+
+Halo, Sobat Petualang! 
+
+Kenalkan, aku pemandu wisata virtualmu yang paling bersemangat hari ini! Pernah dengar kutipan terkenal bahwa *""Yogyakarta terbuat dari rindu, pulang, dan angkringan""*? Percayalah, itu bukan sekadar kata-kata manis. Jogja punya daya magis yang selalu berhasil memeluk siapa saja yang datang. Dari aroma tanahnya, senyum ramah warganya, sampai gemerlap lampunya di malam hari, semuanya bikin jatuh cinta!
+
+Yuk, siapkan ranselmu, pakai sepatu paling nyaman, dan mari kita jelajahi sudut-sudut paling memikat di Yogyakarta bersama-sama!
+
+---
+
+### 1. Menelusuri Lorong Waktu di Tamansari dan Keraton
+Perjalanan kita mulai dari jantung budaya Jawa. Berjalan memasuki area **Keraton Yogyakarta**, kamu akan langsung merasakan suasana sakral yang tenang. Abdi dalem dengan busana tradisional dan senyum tulusnya siap menyambut kita. 
+
+Tak jauh dari sana, kita akan melangkah ke **Tamansari Water Castle**. Tempat ini dulunya adalah pemandian pribadi para putri raja. Arsitekturnya yang memadukan gaya Jawa dan Portugis sangat megah! Lorong-lorong bawah tanahnya yang eksotis, terutama area Sumur Gumuling dengan tangga melingkarnya yang ikonik, dijamin bakal bikin kamu terkagum-kagum sekaligus jadi spot foto yang luar biasa estetik.
+
+### 2. Pacu Adrenalin Menyapa Sang Merapi
+Siap untuk sedikit petualangan seru? Ayo kita naik ke utara, menuju kaki Gunung Merapi! 
+
+Kita akan naik mobil *Jeep* terbuka untuk menyusuri jejak letusan Merapi dalam **Lava Tour Merapi**. Bersiaplah memegang erat pegangan tangan saat mobil melaju melintasi bebatuan, bermanuver di jalan bergelombang, dan puncaknya: basah-basahan bermanuver di aliran Kali Kuning! Angin pegunungan yang sejuk berpadu dengan pemandangan Merapi yang gagah berdiri di hadapan kita adalah pengalaman yang magis sekaligus memompa semangat. *Seru banget!*
+
+### 3. Merajut Cerita di Sepanjang Jalan Malioboro
+Belum ke Jogja namanya kalau belum menginjakkan kaki di **Malioboro**. Di sini, denyut nadi kota terasa paling hidup. 
+
+Sore hari menjelang malam adalah waktu terbaik untuk berjalan santai di trotoarnya yang luas. Suara klinting lonceng dari delman (andong), alunan musik jalanan dari musisi lokal yang begitu bertalenta, hingga deretan pedagang batik dan cenderamata khas Jogja akan menemani langkah kita. Teruslah berjalan ke arah selatan sampai ke **Titik Nol Kilometer**, duduklah di sana sambil menikmati angin malam dan megahnya gedung-gedung peninggalan era kolonial.
+
+### 4. Menutup Hari dengan Sunset Magis dan Hangatnya Angkringan
+Setelah puas menjelajah, saatnya mencari ketenangan. Kita bisa meluncur ke kawasan tebing atau pantai selatan untuk menyaksikan detik-detik matahari terbenam. Langit Jogja yang perlahan berubah warna menjadi jingga keemasan selalu berhasil menghadirkan rasa syukur yang mendalam.
+
+Lalu, bagaimana cara menutup hari yang sempurna? Tentu saja dengan kulineran! Duduk santai beralaskan tikar di **Angkringan**, menikmati seporsi *nasi kucing* dengan aneka sate, ditemani segelas *Kopi Jos* (kopi hitam panas yang dicelup arang membara). Suasananya sederhana, tapi obrolan hangat yang tercipta di sana adalah kemewahan yang sulit kamu temukan di kota metropolitan.
+
+---
+
+### Jogja Selalu Menunggumu Kembali!
+
+Bagi aku, memandu kalian menyusuri Jogja bukan cuma soal mendatangi tempat-tempat indah, tapi tentang merasakan ""jiwa"" dari kota ini. Jogja bukan sekadar destinasi liburan, Jogja adalah rumah yang selalu siap menyambutmu pulang.
+
+Jadi, kapan kita berangkat bareng? Sampai jumpa di sudut kota Jogja yang penuh senyuman, ya!",26,926,876,1828,,,,good,9248
+2026-10-13 08:36:47,budi,eksperimen,gemini-3.8-flash,4,,"Kamu adalah pemandu wisata yang ramah dan penuh semangat. Tulis artikel blog 200 kata tentang wisata di Yogyakarta. Sajikan dalam format terstruktur: pendahuluan, isi, dan penutup.","**Menjelajahi Pesona Magis Yogyakarta: Kota Sejuta Kenangan!**
+
+**Pendahuluan**
+Halo, Sobat Wisata! Selamat datang di Yogyakarta, kota istimewa yang selalu punya cara magis untuk memikat hati siapa saja. Saya, pemandu wisata kalian yang paling bersemangat, sudah tidak sabar untuk mengajak kalian menyelami setiap sudut Jogja yang ramah, hangat, dan penuh kejutan budaya ini!
+
+**Isi**
+Petualangan kita di Jogja dijamin seru karena kotanya adalah paket lengkap! Pertama, mari kita menyelami sejarah agung di Keraton Yogyakarta dan menikmati riuhnya Jalan Malioboro yang legendaris sambil berburu batik. Ingin tantangan yang memacu adrenalin? Naik *jeep* melintasi jalur lahar di lereng Gunung Merapi pasti bikin liburan makin berkesan! 
+
+Setelah puas bertualang, saatnya memanjakan lidah. Jogja siap menyambut kita dengan manis legitnya Gudeg, bakpia hangat yang lumer di mulut, serta sensasi unik menyeruput Kopi Joss di angkringan malam. Jangan lewatkan pula momen emas saat matahari terbenam di Candi Ratu Boko yang begitu memukau!
+
+**Penutup**
+Yogyakarta bukan hanya sekadar destinasi liburan, tapi rumah kedua tempat kenangan indah tertinggal. Jadi, tunggu apa lagi? Segera kemas ranselmu, pasang senyum terbaikmu, dan mari ciptakan cerita tak terlupakan bersama saya di Jogja. Sampai jumpa di kota istimewa ini, sahabat!",44,335,738,1117,,,,good,10365
+2026-10-13 09:08:46,budi,eksperimen,gemini-3.8-flash,4.2,,Kamu adalah pemandu wisata yang ramah dan penuh semangat. Tulis artikel blog 200 kata tentang wisata di Yogyakarta dalam format terstruktur. Jangan bahas harga tiket.,"**Sugeng Rawuh! Menjelajahi Keajaiban Yogyakarta yang Bikin Rindu**
+
+Halo, Sobat Petualang! Siap menjelajahi kota yang selalu punya cerita magis? Yogyakarta bukan sekadar destinasi liburan biasa, melainkan tempat di mana kehangatan budaya dan pesona alam menyatu sempurna. Yuk, intip pengalaman seru yang wajib kamu nikmati di Kota Istimewa ini!
+
+### 1. Pesona Budaya di Jantung Kota
+Mulailah harimu dengan menyelami sejarah agung di **Keraton Yogyakarta** dan keindahan taman air **Taman Sari**. Menjelang senja, luangkan waktu menyusuri **Jalan Malioboro**. Suasana khas musisi jalanan, deretan andong, dan senyuman ramah warga lokal dijamin membuat hatimu terpikat!
+
+### 2. Petualangan Menantang di Kaki Gunung Merapi
+Suka tantangan yang memacu adrenalin? Kamu wajib mencoba **Lava Tour Merapi**! Mengendarai jip terbuka melintasi jalur berbatu sisa erupsi, menyusuri sungai, dan menatap gagahnya Gunung Merapi dari dekat akan jadi momen paling berkesan.
+
+### 3. Manjakan Lidah dengan Kuliner Khas
+Petualangan tentu belum lengkap tanpa pesta rasa. Nikmati manis-gurihnya sepiring **Gudeg legendaris**, segarnya semangkuk wedang ronde di malam hari, dan jangan lupa bawa pulang **Bakpia hangat** langsung dari pabriknya.
+
+Jogja selalu punya cara magis untuk menyambut setiap tamunya. Jadi, tunggu apa lagi? Kemasi ranselmu sekarang dan mari kita ciptakan kenangan manis bersama! Sampai jumpa di Jogja, Sahabat!",36,372,797,1205,,,,good,11570
+2026-10-13 16:22:45,budi,eksperimen,gemini-3.8-flash,2,,Tulis artikel blog 200 kata tentang wisata di Yogyakarta.,"**Pesona Yogyakarta: Kota Budaya yang Selalu Bikin Rindu**
+
+Yogyakarta, atau yang akrab disapa Jogja, selalu memiliki cara magis untuk memikat hati para pelancong. Kota istimewa ini bukan sekadar destinasi wisata biasa, melainkan tempat yang selalu menawarkan kehangatan tradisi, keindahan alam, dan keramahan warganya.
+
+Bagi pencinta sejarah dan budaya, berjalan menyusuri Keraton Yogyakarta dan megahnya Candi Prambanan adalah agenda wajib. Saat sore menjelang, kawasan ikonik Malioboro menjadi sangat hidup. Di sini, Anda bisa menikmati alunan musik jalanan yang syahdu sambil berburu suvenir khas batik.
+
+Tak hanya wisata kota, bentang alam Jogja pun luar biasa menawan. Anda bisa memacu adrenalin lewat *Lava Tour* Merapi dengan jip terbuka, atau bersantai menikmati deburan ombak di deretan pantai pasir putih kawasan Gunungkidul. 
+
+Petualangan tentu belum lengkap tanpa memanjakan lidah. Gurih-manisnya Gudeg Yu Djum, lezatnya sate klatak, hingga sensasi unik kopi joss di angkringan siap melengkapi liburan Anda dengan harga yang ramah di kantong.
+
+Jogja selalu membuktikan bahwa setiap sudutnya menyimpan kenangan manis yang membuat siapa pun ingin kembali. Sudah siap mengemas koper dan menjelajahi keindahan Yogyakarta lagi?",15,296,768,1079,,,,good,12649
+2026-10-13 18:20:43,budi,eksperimen,gemini-3.8-flash,5,,"Kamu adalah perencana perjalanan. Tujuannya mempromosikan wisata Yogyakarta untuk mahasiswa yang ingin liburan hemat. Buat itinerari 3 hari dengan judul untuk tiap hari. Berpikirlah langkah demi langkah: pilih bulan dengan cuaca yang cocok, daftar tempat yang dikunjungi, lalu tentukan urutan kunjungan terbaik.","Halo! Sebagai perencana perjalanan, saya telah merancang panduan liburan hemat (ala *backpacker* mahasiswa) ke Yogyakarta selama 3 hari 2 malam. 
+
+Berikut adalah tahapan perencanaannya:
+
+---
+
+### **Langkah 1: Pemilihan Waktu Kunjungan (Bulan Terbaik)**
+* **Bulan Terpilih: Mei**
+* **Alasan:** Bulan Mei adalah awal musim kemarau di Yogyakarta (cuaca cenderung cerah, risiko hujan rendah untuk wisata *outdoor*). Selain itu, Mei berada di luar musim liburan sekolah (*low-to-mid season*), sehingga tiket kereta api dan penginapan masih bertarif normal/murah, serta tempat wisata tidak terlalu padat.
+
+---
+
+### **Langkah 2: Daftar Tempat Wisata (Ramah Kantong & Estetik)**
+1. **Budaya & Ikonik:** Tamansari Water Castle, Keraton Yogyakarta, Titik Nol KM, Jalan Malioboro.
+2. **Alam & *Sunset*:** Hutan Pinus Mangunan, Gumuk Pasir Parangkusumo, Pantai Parangtritis.
+3. **Candi Hemat:** Candi Plaosan (alternatif Prambanan yang jauh lebih murah dan estetik).
+4. **Kuliner Mahasiswa:** Kopi Klothok Pakem, Angkringan Kopi Jos Lik Man, Pasar Beringharjo.
+
+---
+
+### **Langkah 3: Itinerari 3 Hari 2 Malam**
+
+*Transportasi yang disarankan: Sewa sepeda motor (sekitar Rp70.000–Rp80.000/hari, bisa patungan berdua).*
+
+---
+
+#### **HARI 1: ""Napak Tilas Sejarah & Gemerlap Jantung Kota""**
+*(Fokus: Wisata area pusat kota, hemat bensin, banyak jalan kaki)*
+
+* **08.00 – 11.30 : Tamansari Water Castle & Kampung Cyber**
+  * Eksplorasi lorong bawah tanah Masjid Sumur Gumuling dan kolam pemandian sultan.
+  * *Tiket masuk: Rp15.000/orang.*
+* **12.00 – 14.30 : Kuliner & *Thrifting* di Pasar Beringharjo**
+  * Makan siang Sego Pecel / Gudeng Koyor murah di lantai dasar, dilanjutkan jalan santai melihat batik/baju murah.
+* **15.00 – 17.00 : Istirahat & *Check-in* Hostel/Homestay**
+  * Pilih area sekitar Prawirotaman atau Sosrowijayan (banyak *dormitory* murah mulai Rp80.000/malam).
+* **17.30 – 21.00 : Senja di Titik Nol KM & Malam Syahdu Malioboro**
+  * Foto-foto di bangunan kolonial Titik Nol KM, menikmati musisi jalanan Malioboro.
+  * **Makan Malam:** Angkringan Kopi Jos dekat Stasiun Tugu (Nasi Kucing + Sate-satean + Kopi Arang: ~Rp15.000 - Rp20.000).
+
+---
+
+#### **HARI 2: ""Sejuknya Hutan Pinus Menuju Senja Pantai Selatan""**
+*(Fokus: Menjelajah Bantul, rute searah dari perbukitan turun ke pantai)*
+
+* **08.00 – 11.30 : Hutan Pinus Mangunan & Kebun Buah Mangunan**
+  * Menikmati udara segar perbukitan dan foto di antara jajaran pohon pinus yang estetik.
+  * *Tiket masuk: Rp5.000 - Rp10.000/orang.*
+* **12.00 – 14.00 : Makan Siang Mangut Lele / Warung Lokal Bantul**
+  * Kulineran khas pedesaan yang ramah dompet (~Rp15.000 - Rp20.000).
+* **15.00 – 16.30 : Gumuk Pasir Parangkusumo**
+  * Pemandangan padang pasir langka ala Timur Tengah, cocok untuk foto siluet.
+* **16.30 – 18.30 : Menikmati Senja di Pantai Parangtritis**
+  * Duduk santai di pinggir pantai beralas tikar sambil makan jagung bakar menunggu matahari terbenam.
+  * *Tiket retribusi gabungan pantai: Rp10.000/orang.*
+* **19.30 : Kembali ke Kota & Istirahat**
+
+---
+
+#### **HARI 3: ""Nuansa Syahdu Pedesaan Merapi & Candi Kembar""**
+*(Fokus: Sleman bagian utara hingga Klaten batas Jogja)*
+
+* **07.00 – 09.30 : Sarapan Pagi di Warung Kopi Klothok (Pakem)**
+  * Menikmati lodeh, telur krispi legendaris, dan pisang goreng di tepi sawah dengan latar Gunung Merapi.
+  * *Estimasi biaya makan: Rp20.000 - Rp25.000.*
+* **10.30 – 12.30 : Wisata Candi Plaosan**
+  * Candi kembar bercorak Hindu-Buddha yang megah dengan latar persawahan. Tiketnya jauh lebih murah dibanding Candi Prambanan.
+  * *Tiket masuk: Rp10.000/orang.*
+* **13.00 – 14.30 : Berburu Oleh-oleh Murah (Bakpia Pathok Pabrik / Pasar)**
+  * Beli bakpia langsung di sentra pembuatan Pathok untuk harga terbaik (bisa tawar-menawar).
+* **15.00 : Menuju Stasiun / Pulang**
+
+---
+
+### **Estimasi Kasar Pengeluaran per Orang (Di luar tiket kereta PP):**
+* **Penginapan (2 malam di hostel *backpacker*):** Rp160.000
+* **Sewa motor + bensin (patungan berdua, 3 hari):** Rp135.000
+* **Tiket masuk wisata seluruhnya:** ~Rp50.000
+* **Makan & jajan (3 hari):** Rp180.000 - Rp220.000
+* **Total Perkiraan:** **± Rp525.000 - Rp565.000 / orang.** Sangat hemat untuk liburan 3 hari penuh!",68,1486,1065,2619,,,,good,15268
+2026-10-13 18:23:13,budi,eksperimen,gemini-3.8-flash,5.2,,"Kamu adalah perencana perjalanan yang ingin memberi gambaran seimbang tentang wisata Yogyakarta untuk mahasiswa. Buat itinerari 3 hari yang terstruktur dengan judul untuk tiap hari, dan berpikirlah langkah demi langkah. Jangan sertakan informasi sejarah yang lebih tua dari 50 tahun.","Berikut adalah rancangan itinerari perjalanan 3 hari di Yogyakarta yang disusun secara bertahap, ramah kantong mahasiswa, dinamis, serta murni berfokus pada ruang kreatif kekinian, keindahan alam, dan fenomena modern.
+
+---
+
+### **Langkah Perencanaan (Step-by-Step Planning)**
+
+1. **Langkah 1: Menentukan Karakter Perjalanan**  
+   Mahasiswa membutuhkan destinasi yang seimbang antara petualangan seru, estetika visual (Instagrammable), serta pengeluaran yang efisien untuk transportasi dan makanan.
+2. **Langkah 2: Menghindari Kawasan Bersejarah Kuno**  
+   Semua atraksi yang dipilih berfokus pada bentang alam terkini, fenomena modern (seperti dampak erupsi 2010), ruang publik kekinian, dan pusat kuliner generasi baru.
+3. **Langkah 3: Zonasi Wilayah agar Hemat Energi & Biaya**  
+   - **Hari 1:** Kawasan Urban & Ruang Kreatif (Pusat Kota).  
+   - **Hari 2:** Petualangan Lereng Merapi & Sunset Ketinggian (Utara & Timur).  
+   - **Hari 3:** Pesisir Modern & Kuliner Santai (Selatan).
+
+---
+
+### **Itinerari 3 Hari: Jogja Modern & Seru untuk Mahasiswa**
+
+#### **HARI 1: Eksplorasi Seni Kontemporer & Dinamika Urban Jogja**
+*Fokus: Adaptasi ruang kota, komunitas kreatif muda, dan kuliner terjangkau.*
+
+* **08.30 – 10.30: Sarapan di Lantai 2 Pasar Kranggan**  
+  Mengunjungi area lantai atas pasar tradisional yang telah disulap menjadi sentra kuliner modern bagi anak muda. Tersedia berbagai pilihan makanan lokal hingga artisan coffee dengan harga ramah kantong.
+* **11.00 – 14.30: Menjelajah JNM Bloc (Jogja National Museum Bloc)**  
+  Menikmati ruang kreatif tempat berkumpulnya komunitas seni modern. Kamu bisa melihat instalasi seni kontemporer, pameran pop-up, toko produk desain lokal, serta berfoto di sudut-sudut arsitektur modern-industrial.
+* **15.30 – 18.00: Sore Santai di Kawasan Pedestrian Malioboro**  
+  Menikmati suasana jalur pejalan kaki yang telah ditata rapi dan modern dalam beberapa tahun terakhir. Cocok untuk jalan-jalan sore, mengamati penampilan musisi jalanan modern, dan menikmati angin sore.
+* **18.30 – 21.00: Nongkrong di Sentra Kopi Jos & Angkringan Modern**  
+  Menutup malam pertama dengan bersantai di angkringan sekitar stasiun, menikmati suasana hangat kota sambil berdiskusi santai.
+
+---
+
+#### **HARI 2: Petualangan Jejak Erupsi Merapi & Senja dari Ketinggian**
+*Fokus: Adrenalin, fenomena alam modern, dan lanskap tebing.*
+
+* **07.30 – 11.30: Merapi Lava Tour (Kawasan Kaliurang)**  
+  Menyewa mobil jeep bersama rombongan untuk melihat langsung dampak letusan Gunung Merapi tahun 2010. Rute ini mencakup *Museum Sisa Hartaku* (artefak rumah warga yang terkena awan panas 2010) serta jalur off-road air Kali Kuning yang memacu adrenalin.
+* **12.00 – 13.30: Makan Siang Khas Desa di Area Pakem**  
+  Mengisi tenaga dengan kuliner rumahan terjangkau di warung-warung makan bernuansa alam pedesaan terbuka di kaki gunung.
+* **15.00 – 18.30: Menikmati Sunset di Obelix Hills**  
+  Bergerak ke arah tenggara menuju destinasi wisata modern yang dibangun di atas perbukitan batu pada tahun 2021. Menyajikan spot foto kekinian, pertunjukan musik akustik langsung, dan pemandangan matahari terbenam dengan latar gemerlap lampu kota Jogja.
+* **19.30 – 21.30: Wisata Kuliner Malam di Kawasan Mahasiswa (Seturan)**  
+  Merasakan atmosfer malam di pusat tempat tinggal mahasiswa Jogja yang penuh aneka jajanan viral dan kafe terjangkau.
+
+---
+
+#### **HARI 3: Pesona Bahari Modern & Perburuan Oleh-Oleh Kekinian**
+*Fokus: Relaksasi pantai, panorama laut, dan persiapan kepulangan.*
+
+* **07.00 – 11.30: Pantai Drini & Tepi Laut Gunungkidul**  
+  Menikmati pantai selatan dengan hamparan pasir putih yang kini dilengkapi jembatan pandang dan fasilitas rekreasi modern. Ombaknya yang relatif tenang di area laguna aman untuk bermain air santai.
+* **12.00 – 14.00: Makan Siang Hasil Laut di Tepi Pantai**  
+  Makan siang bersama dengan paket ikan bakar ekonomis yang disajikan langsung oleh pedagang setempat.
+* **15.30 – 17.30: Berburu Oleh-Oleh Modern di Pusat Kota**  
+  Membeli oleh-oleh kekinian seperti bakpia kukus modern atau cinderamata kreatif kreasi pegiat distro lokal Yogyakarta.
+* **18.00 – Selesai: Kopi Penutup di Kawasan Prawirotaman**  
+  Menghabiskan waktu terakhir sebelum keberangkatan kereta/pesawat di kedai kopi bergaya estetik untuk merangkum seluruh momen liburan.
+
+---
+
+### **Tips Tambahan untuk Mahasiswa:**
+* **Transportasi:** Sangat disarankan menyewa sepeda motor agar mobilitas lebih lincah dan hemat, atau patungan sewa mobil untuk rute Gunungkidul/Merapi.
+* **Estimasi Waktu:** Berikan jeda 1–1,5 jam perjalanan jika berpindah dari pusat kota menuju wilayah Merapi atau pantai selatan.",58,1347,1669,3074,,,,good,18342
+2026-10-13 18:37:58,budi,eksperimen,gemini-3.8-flash,6,,"Kamu adalah pemandu wisata yang ramah dan menulis untuk mahasiswa. Tujuan: mempromosikan wisata hemat di Yogyakarta. Lakukan langkah berikut: kategorikan jenis wisata (alam, budaya, kuliner), lalu ringkas. Sajikan dalam 3 bagian. Pertimbangkan 3 rute wisata yang berbeda, evaluasi kelebihan dan kekurangan masing-masing, lalu rekomendasikan yang terbaik.","Halo, Sobat Kampus! Salam hangat dari Yogyakarta! 
+
+Sebagai pemandu wisata kalian, aku paham banget kalau liburan mahasiswa itu rumusnya satu: **pengalaman maksimal dengan budget minimal**. Tenang, Jogja adalah surganya wisata murah tapi nggak murahan! 
+
+Berikut panduan wisata hemat di Jogja yang sudah aku rancang khusus dalam 3 bagian. *Yuk, simak!*
+
+---
+
+### BAGIAN 1: Kategori & Ringkasan Wisata Hemat Jogja
+
+Untuk memudahkan perencanaan, wisata hemat di Jogja bisa kita bagi menjadi tiga kategori utama:
+
+1. **Wisata Alam (Nature):**
+   * *Spot Pilihan:* Tebing Breksi, Hutan Pinus Mangunan, Bukit Klangon, dan Pantai Parangtritis.
+   * *Ringkasan:* Sebagian besar wisata alam Jogja hanya mematok tiket masuk antara Rp5.000 – Rp15.000. Pemandangannya luar biasa, mulai dari megahnya Gunung Merapi hingga matahari terbenam di pesisir selatan. Sangat cocok untuk *healing* dari tugas kuliah tanpa bikin dompet nangis.
+2. **Wisata Budaya (Culture):**
+   * *Spot Pilihan:* Keraton Yogyakarta, Tamansari, Museum Sonobudoyo, dan Candi Sambisari.
+   * *Ringkasan:* Jogja adalah pusat kebudayaan Jawa. Masuk ke situs bersejarah ini rata-rata di bawah Rp15.000. Bonusnya, beberapa tempat memberikan diskon khusus jika kalian menunjukkan Kartu Tanda Mahasiswa (KTM)!
+3. **Wisata Kuliner (Food):**
+   * *Spot Pilihan:* Angkringan KR / Kopi Joss Lik Man, Gudeg Bromo, Soto Sampah, dan Mie Ayam Tumini.
+   * *Ringkasan:* Kuliner Jogja sangat ramah kantong kos-kosan. Dengan Rp10.000 – Rp20.000, kalian sudah bisa makan kenyang plus minum es teh manis. 
+
+---
+
+### BAGIAN 2: Pilihan 3 Rute Wisata Hemat & Evaluasinya
+
+Kalian bisa memilih salah satu dari tiga rute 1-hari berikut menggunakan sepeda motor sewaan (patungan berdua jauh lebih hemat!):
+
+#### Rute 1: ""Jantung Budaya & Rasa"" (Pusat Kota)
+* **Itinerari:** Tamansari $\rightarrow$ Museum Sonobudoyo $\rightarrow$ Sore santai di Titik Nol Km/Malioboro $\rightarrow$ Angkringan Kopi Joss.
+* **Kelebihan:** 
+  * Sangat hemat bensin karena jarak antar-lokasi berdekatan (bisa naik Trans Jogja seharga Rp3.500!).
+  * Banyak pilihan kuliner murah di setiap sudut.
+* **Kekurangan:** 
+  * Suasana cenderung padat dan macet, terutama saat *weekend*.
+  * Kurang cocok bagi yang mencari ketenangan alam terbuka.
+
+#### Rute 2: ""Sejuk Lereng Merapi"" (Sleman / Jogja Utara)
+* **Itinerari:** Candi Sambisari $\rightarrow$ Bukit Klangon (view Gunung Merapi) $\rightarrow$ Makan siang Kopi Klothok $\rightarrow$ Senja di Tebing Breksi.
+* **Kelebihan:** 
+  * Udara sejuk dan pemandangan alam spektakuler.
+  * Banyak spot foto *aesthetic* untuk media sosial.
+* **Kekurangan:** 
+  * Jarak tempuh cukup jauh dari pusat kota, jalanan menanjak (motor harus prima).
+  * Kopi Klothok sering antre panjang jika datang di jam sibuk.
+
+#### Rute 3: ""Pesona Senja Bahari"" (Bantul & Pesisir Selatan)
+* **Itinerari:** Hutan Pinus Mangunan $\rightarrow$ Gumuk Pasir Parangkusumo $\rightarrow$ Sunset di Pantai Parangtritis $\rightarrow$ Makan malam Sate Klatak (porsi hemat).
+* **Kelebihan:** 
+  * Variasi pemandangan lengkap (hutan pinus, padang pasir, dan pantai).
+  * Momen matahari terbenam (*sunset*) yang magis.
+* **Kekurangan:** 
+  * Menghabiskan waktu di perjalanan (butuh waktu sekitar 1–1,5 jam sekali jalan).
+  * Jalur pulang di malam hari minim penerangan jalan di beberapa titik.
+
+---
+
+### BAGIAN 3: Rekomendasi Rute Terbaik untuk Mahasiswa
+
+Dari ketiga opsi di atas, rute yang **PALING DIREKOMENDASIKAN** untuk mahasiswa adalah:
+
+🏆 **Rute 1: ""Jantung Budaya & Rasa"" (Pusat Kota)**
+
+**Alasan Pemilihan:**
+1. **Efisiensi Anggaran (Super Hemat):** Rute ini memiliki rasio pengeluaran paling rendah. Kamu tidak perlu menyewa motor mahal; kamu bahkan bisa menggunakan bus **Trans Jogja (Rp3.500)** atau jalan kaki santai. Tiket masuk Tamansari dan Sonobudoyo totalnya tidak sampai Rp30.000.
+2. **Fleksibilitas Waktu:** Tidak ada risiko terjebak malam di jalan pedesaan yang gelap. Kalian bisa menikmati suasana malam Jogja di Malioboro sambil ngobrol santai di trotoar tanpa terburu-buru pulang.
+3. **Pengalaman Autentik:** Rute ini memberikan esensi ""Jogja yang sesungguhnya""—sejarah, interaksi warga lokal, seni, dan budaya makan angkringan yang hangat.
+
+**Tips Tambahan Pemandu Wisata:**
+* Selalu bawa **KTM** aktif di dompet untuk potensi diskon tiket masuk.
+* Bawa botol minum (*tumbler*) sendiri untuk menghemat uang jajan air mineral.
+* Datang ke Tamansari pagi-pagi (pukul 09.00) agar belum terlalu ramai dan pencahayaan foto masih bagus!
+
+Selamat berlibur di Jogja, Sobat Kampus! Sampai jumpa di jalanan Malioboro!",80,1333,1309,2722,,,,good,21064
+2026-10-13 18:42:30,budi,eksperimen,gemini-3.8-flash,6.2,,"Kamu adalah pemandu wisata yang menulis untuk mahasiswa tentang wisata hemat di Yogyakarta. Ikuti instruksi langkah demi langkah: kategorikan jenis wisata dan ringkas, sajikan dalam 3 bagian, lalu evaluasi 3 pilihan rute wisata beserta kelebihan dan kekurangannya. Jangan sebut harga dan jangan menyebutkan target pembaca.","Berikut adalah panduan eksplorasi Yogyakarta yang dirancang secara terstruktur dalam tiga bagian:
+
+---
+
+### Bagian 1: Kategorisasi dan Ringkasan Wisata
+
+Eksplorasi di Yogyakarta dapat dikelompokkan ke dalam tiga kategori utama:
+
+1. **Wisata Sejarah dan Budaya:**  
+   Berpusat pada warisan tradisi Jawa dan peninggalan masa lampau. Destinasi meliputi kawasan keraton, pemandian kuno, hingga lorong-lorong bersejarah peninggalan Mataram Islam. Karakteristiknya sarat narasi edukatif, arsitektur klasik, dan nilai filosofis tinggi.
+2. **Wisata Alam dan Lanskap:**  
+   Menawarkan panorama luar ruangan, mulai dari barisan perbukitan, kawasan hutan pinus yang asri, hingga garis pantai di pesisir selatan. Kategori ini berfokus pada ruang terbuka, udara segar, serta pemandangan matahari terbit maupun terbenam.
+3. **Wisata Urban dan Ruang Komunal:**  
+   Mencakup kawasan jalan ikonik, ruang publik di pusat kota, serta kantong-kantong seni modern. Karakteristiknya dinamis, ramah pejalan kaki, dan memberikan kesempatan untuk menikmati denyut kehidupan lokal serta interaksi sosial.
+
+---
+
+### Bagian 2: Tiga Rekomendasi Rute Perjalanan
+
+* **Rute 1: Eksplorasi Pusaka Kota (Heritage Urban)**  
+  *Alur Perjalanan:* Kawasan Malioboro $\rightarrow$ Titik Nol Kilometer $\rightarrow$ Kompleks Tamansari $\rightarrow$ Alun-Alun Kidul.  
+  *Fokus:* Menyusuri inti sejarah Yogyakarta dari pagi hingga malam hari melalui jalan kaki atau transportasi umum lokal.
+
+* **Rute 2: Ketinggian dan Panorama Hijau (Nature & Sunset)**  
+  *Alur Perjalanan:* Kawasan Hutan Pinus Mangunan $\rightarrow$ Puncak Becici $\rightarrow$ Bukit Bintang.  
+  *Fokus:* Menikmati kesegaran alam perbukitan di siang hari dan menutup perjalanan dengan pemandangan kerlap-kerlip lampu kota dari ketinggian.
+
+* **Rute 3: Seni, Gang Kuno, dan Suasana Klasik (Art & Old Town)**  
+  *Alur Perjalanan:* Kawasan Bersejarah Kotagede $\rightarrow$ Museum/Ruang Kreatif Seni $\rightarrow$ Kawasan Prawirotaman.  
+  *Fokus:* Menjelajahi labirin arsitektur rumah lawas, kerajinan perak, dan kawasan dengan atmosfer perpaduan budaya tradisional serta kontemporer.
+
+---
+
+### Bagian 3: Evaluasi Rute (Kelebihan dan Kekurangan)
+
+#### 1. Rute Eksplorasi Pusaka Kota
+* **Kelebihan:**
+  * Jarak antar-titik sangat berdekatan, sehingga rute ini ramah bagi pejalan kaki dan mudah diakses transportasi publik.
+  * Menawarkan pemahaman mendalam tentang tata ruang dan sejarah Kesultanan dalam satu hari perjalanan.
+* **Kekurangan:**
+  * Area sering kali sangat padat oleh pengunjung, terutama saat akhir pekan.
+  * Suhu udara di siang hari terasa cukup terik saat berpindah antar-lokasi terbuka.
+
+#### 2. Rute Ketinggian dan Panorama Hijau
+* **Kelebihan:**
+  * Suasana sejuk, tenang, dan jauh dari kebisingan pusat kota.
+  * Menyajikan banyak lanskap alam yang estetik untuk dinikmati secara visual.
+* **Kekurangan:**
+  * Membutuhkan kendaraan pribadi roda dua atau roda empat karena tidak dilalui transportasi umum reguler.
+  * Kondisi jalan berkelok dan menanjak, membutuhkan keterampilan berkendara yang baik.
+
+#### 3. Rute Seni, Gang Kuno, dan Suasana Klasik
+* **Kelebihan:**
+  * Suasana relatif lebih tenang dan tidak sepadat pusat kota utama.
+  * Memberikan pengalaman interaksi yang lebih otentik dengan warga lokal di kawasan pemukiman bersejarah.
+* **Kekurangan:**
+  * Jalur di dalam gang cukup sempit, sehingga kendaraan bermotor harus diparkir di titik tertentu sebelum berjalan kaki.
+  * Lokasi antar-objek wisata tersebar dan membutuhkan pemetaan rute yang cermat agar waktu tidak terbuang di jalan.",68,955,1090,2113,,,,good,23177
+2026-10-13 18:47:34,budi,eksperimen,gemini-3.8-flash,7,,"Buat slogan wisata untuk Candi Prambanan.
+Contoh:
+Tempat: Malioboro
+Slogan: Susuri Malioboro, pulang bawa bahagia!
+Jangan sertakan harga tiket atau saran transportasi.","Tempat: Candi Prambanan  
+Slogan: Kagumi megahnya Prambanan, selami keajaiban peradaban!",47,30,569,646,,,,good,23823
+2026-10-13 18:54:17,budi,eksperimen,gemini-3.8-flash,7.2,,"Buat slogan wisata untuk Candi Prambanan dengan mengikuti contoh yang diberikan.
+Contoh:
+Tempat: Malioboro
+Slogan: Susuri Malioboro, pulang bawa bahagia!
+Batasan: jangan bahas harga tiket dan jangan bahas bencana alam.","**Tempat:** Candi Prambanan  
+**Slogan:** Kagumi megahnya Prambanan, pulang bawa sejuta kekaguman!",56,31,698,785,,,,good,24608
+2026-10-13 19:13:29,budi,eksperimen,gemini-3.8-flash,8,,"Tulis slogan wisata singkat untuk Candi Prambanan berdasarkan 3 contoh berikut.
+Tempat: Malioboro -> Slogan: Susuri Malioboro, pulang bawa bahagia!
+Tempat: Keraton Yogyakarta -> Slogan: Masuki cerita sang raja!
+Tempat: Pantai Parangtritis -> Slogan: Kejar senja di ujung selatan!
+Buat berorientasi aksi (mulai dengan kata kerja), tetapi jangan sebut harga atau bencana alam.",**Slogan:** Jelajahi kemegahan legenda seribu candi!,100,16,621,737,,,,good,25345
+2026-10-13 19:30:18,budi,eksperimen,gemini-3.8-flash,8.2,,"Tulis slogan wisata untuk Candi Prambanan dalam satu baris (maksimal 10 kata) berdasarkan 3 contoh berikut.
+Tempat: Malioboro -> Slogan: Susuri Malioboro, pulang bawa bahagia!
+Tempat: Keraton Yogyakarta -> Slogan: Masuki cerita sang raja!
+Tempat: Pantai Parangtritis -> Slogan: Kejar senja di ujung selatan!
+Mulailah dengan kata kerja. Jangan sertakan tautan atau kutipan.",Kagumi kemegahan legenda seribu candi!,105,12,784,901,,,,good,26246
+2026-10-13 19:37:42,budi,eksperimen,gemini-3.8-flash,9,,"Berikut hasil API cuaca Yogyakarta (data contoh): Senin 31°C cerah; Selasa 30°C berawan; Rabu 29°C hujan ringan; Kamis 31°C cerah; Jumat 32°C cerah.
+Berikan prakiraan suhu 5 hari ke depan di Yogyakarta berdasarkan data tersebut, tanpa contoh. Tulis ringkasan 50 kata dan jangan sertakan data cuaca historis.","Prakiraan suhu lima hari ke depan di Yogyakarta berada pada rentang 29°C hingga 32°C. Suhu udara dimulai dari 31°C pada hari Senin, turun ke 30°C pada hari Selasa, dan menyentuh 29°C pada Rabu. Kondisi kembali menghangat pada Kamis dengan suhu 31°C, sebelum akhirnya mencapai puncaknya di hari Jumat sebesar 32°C.",95,94,2116,2305,,,,good,28551
+2026-10-13 19:39:02,budi,eksperimen,gemini-3.8-flash,9.2,,"Kamu adalah seorang meteorolog. Berikut hasil API cuaca Yogyakarta (data contoh): Senin 31°C cerah; Selasa 30°C berawan; Rabu 29°C hujan ringan; Kamis 31°C cerah; Jumat 32°C cerah.
+Tulis laporan singkat dan langsung berdasarkan data tersebut, dan jangan sertakan opini wisatawan.","**Laporan Cuaca Wilayah Yogyakarta (Senin – Jumat)**
+
+Berdasarkan analisis data meteorologi, kondisi cuaca di Yogyakarta selama periode ini didominasi oleh cuaca cerah dengan suhu berkisar antara 29°C hingga 32°C.
+
+**Rincian Harian:**
+* **Senin:** 31°C, cerah.
+* **Selasa:** 30°C, berawan.
+* **Rabu:** 29°C, hujan ringan.
+* **Kamis:** 31°C, cerah.
+* **Jumat:** 32°C, cerah.
+
+**Ringkasan:**
+Presipitasi terpantau minim dan hanya berpotensi terjadi pada hari Rabu dengan intensitas hujan ringan. Suhu udara berada pada titik terendah pada hari Rabu (29°C) dan mencapai titik tertinggi pada hari Jumat (32°C). Kondisi atmosfer secara umum stabil dan cerah menjelang akhir pekan.",80,214,558,852,,,,good,29403
+2026-10-13 19:43:50,budi,eksperimen,gemini-3.8-flash,10,,"Buat pilihan slogan wisata untuk Candi Prambanan dalam tiga gaya.
+Gaya 1 (tanpa contoh): buat satu slogan.
+Gaya 2 (satu contoh): ikuti contoh ini.
+Tempat: Malioboro
+Slogan: Susuri Malioboro, pulang bawa bahagia!
+Gaya 3 (tiga contoh): ikuti contoh ini.
+Tempat: Malioboro -> Slogan: Susuri Malioboro, pulang bawa bahagia!
+Tempat: Keraton Yogyakarta -> Slogan: Masuki cerita sang raja!
+Tempat: Pantai Parangtritis -> Slogan: Kejar senja di ujung selatan!
+Semua slogan berorientasi aksi (mulai dengan kata kerja). Jangan sebut harga atau bencana alam.","Berikut adalah pilihan slogan wisata untuk Candi Prambanan berdasarkan tiga gaya yang diminta:
+
+**Gaya 1 (Tanpa contoh)**
+* Slogan: Jelajahi kemegahan mahakarya batu dan hidupkan kembali kisah masa silam!
+
+**Gaya 2 (Satu contoh)**
+* Slogan: Telusuri Candi Prambanan, bawa pulang keajaiban legenda!
+
+**Gaya 3 (Tiga contoh)**
+* Tempat: Candi Prambanan -> Slogan: Saksikan keagungan cinta sang legenda!",163,116,1026,1305,,,,good,30708
+2026-10-13 19:49:41,budi,eksperimen,gemini-3.8-flash,10.2,,"Ikuti langkah berikut untuk membuat slogan wisata Candi Prambanan:
+1) Buat satu slogan tanpa contoh.
+2) Buat satu slogan dengan mengikuti satu contoh:
+Tempat: Malioboro
+Slogan: Susuri Malioboro, pulang bawa bahagia!
+3) Buat satu slogan dengan mengikuti tiga contoh:
+Tempat: Malioboro -> Slogan: Susuri Malioboro, pulang bawa bahagia!
+Tempat: Keraton Yogyakarta -> Slogan: Masuki cerita sang raja!
+Tempat: Pantai Parangtritis -> Slogan: Kejar senja di ujung selatan!
+Mulailah tiap slogan dengan kata kerja. Jangan menyebutkan target pembaca.","Berikut adalah slogan wisata Candi Prambanan sesuai dengan langkah-langkah yang ditentukan:
+
+1) **Slogan tanpa contoh:**  
+Kagumi mahakarya agung warisan dunia!
+
+2) **Slogan mengikuti satu contoh:**  
+Jelajahi Prambanan, resapi keajaiban masa silam!
+
+3) **Slogan mengikuti tiga contoh:**  
+Saksikan keabadian legenda yang terpahat di batu!",146,92,1048,1286,,,,good,31994
+2026-10-13 20:04:01,budi,eksperimen,gemini-3.8-flash,11.2,,"Berikut hasil API cuaca Yogyakarta (data contoh): Hari 1 cerah 31°C; Hari 2 berawan 30°C; Hari 3 hujan ringan 29°C.
+Susun rencana liburan 3 hari ke Yogyakarta berdasarkan data cuaca tersebut. Berpikirlah langkah demi langkah. Tahap 1 (pemilihan hari): tanpa contoh. Tahap 2 (itinerari): ikuti satu contoh format ini -> Hari 1: Pagi - Candi Prambanan; Siang - makan gudeg; Malam - Malioboro. Jangan bahas bencana alam.","Berikut adalah rencana liburan 3 hari ke Yogyakarta yang disusun langkah demi langkah berdasarkan kondisi cuaca:
+
+**Tahap 1: Pemilihan Hari**
+* **Hari 1 (Cerah, 31°C):** Kondisi langit cerah sangat ideal untuk kegiatan luar ruangan penuh, seperti eksplorasi situs cagar budaya terbuka luas atau area alam di pagi hari, serta menikmati pemandangan saat matahari terbit atau terbenam.
+* **Hari 2 (Berawan, 30°C):** Suhu yang teduh dan minim terik matahari langsung sangat cocok untuk wisata sejarah semi-terbuka, penjelajahan jalanan kota, atau aktivitas jalan kaki santai.
+* **Hari 3 (Hujan ringan, 29°C):** Mengingat adanya potensi presipitasi, kegiatan harus difokuskan pada destinasi dalam ruangan beratap, wisata edukasi/museum, belanja di pasar tertutup, dan wisata kuliner.
+
+---
+
+**Tahap 2: Itinerari**
+
+Hari 1: Pagi - Candi Borobudur; Siang - makan siang mangut lele; Malam - Tebing Breksi.  
+Hari 2: Pagi - Keraton dan Tamansari; Siang - makan bakmi jawa; Malam - Malioboro.  
+Hari 3: Pagi - Museum Sonobudoyo; Siang - belanja di Pasar Beringharjo; Malam - angkringan kopi joss.",128,312,1023,1463,,,,good,33457
+2026-10-13 20:05:51,budi,eksperimen,gemini-3.8-flash,11,,"Berikut hasil API cuaca Yogyakarta (data contoh): Hari 1 cerah 31°C; Hari 2 berawan 30°C; Hari 3 hujan ringan 29°C.
+Susun rencana liburan 3 hari ke Yogyakarta berdasarkan data cuaca tersebut. Berpikirlah langkah demi langkah. Tahap 1 (pemilihan hari): tanpa contoh. Tahap 2 (itinerari): ikuti satu contoh format ini -> Hari 1: Pagi - Candi Prambanan; Siang - makan gudeg; Malam - Malioboro. Jangan bahas bencana alam.","**Tahap 1: Pemilihan Hari**
+
+* **Hari 1 (Cerah, 31°C):** Dialokasikan sepenuhnya untuk aktivitas luar ruangan terbuka yang membutuhkan sinar matahari maksimal, pencahayaan alami yang baik untuk dokumentasi, dan panorama bentang alam terbuka.
+* **Hari 2 (Berawan, 30°C):** Dialokasikan untuk eksplorasi kawasan sejarah atau area terbuka dengan mobilitas jalan kaki yang tinggi, karena tutupan awan memberikan kenyamanan dari paparan terik matahari langsung.
+* **Hari 3 (Hujan ringan, 29°C):** Dialokasikan untuk kegiatan di dalam ruangan (rekreasi tertutup, wisata edukasi, dan sentra belanja beratap) guna memastikan kenyamanan perjalanan tetap terjaga tanpa terganggu oleh basahnya cuaca luar.
+
+---
+
+**Tahap 2: Itinerari**
+
+Hari 1: Pagi - Gumuk Pasir Parangkusumo; Siang - Makan sate klatak; Malam - Puncak Becici.  
+Hari 2: Pagi - Keraton Ngayogyakarta Hadiningrat; Siang - Makan nasi brongkos; Malam - Kawasan Titik Nol Kilometer.  
+Hari 3: Pagi - Museum Ullen Sentalu; Siang - Makan bakmi jawa; Malam - Belanja oleh-oleh di Pasar Beringharjo.",128,294,1161,1583,,,,good,35040
+2026-10-13 20:11:58,budi,eksperimen,gemini-3.8-flash,12,,"Berikut hasil pencarian tempat populer di Yogyakarta (data contoh): Malioboro, Candi Prambanan, Keraton Yogyakarta, Taman Sari, Pantai Parangtritis.
+Susun strategi konten media sosial 1 minggu untuk mempromosikan wisata Yogyakarta. Berpikirlah langkah demi langkah, gunakan hasil pencarian tersebut, dan ikuti pola contoh judul berikut: Susuri Malioboro, pulang bawa bahagia!; Masuki cerita sang raja!; Kejar senja di ujung selatan!. Tulis dengan kata kerja di awal. Jangan sebut harga atau opini wisatawan.","Berikut adalah penyusunan strategi konten media sosial 1 minggu yang dirancang langkah demi langkah:
+
+### Langkah 1: Penentuan Alur Tematik Mingguan
+Agar promosi terstruktur, konten dibagi berdasarkan kedekatan geografis dan tema pengalaman:
+* **Awal Minggu (Hari 1–3):** Eksplorasi pusat budaya dan sejarah kota (Malioboro, Keraton Yogyakarta, Taman Sari).
+* **Tengah Minggu (Hari 4–5):** Mahakarya arsitektur kuno dan keindahan alam (Candi Prambanan, Pantai Parangtritis).
+* **Akhir Minggu (Hari 6–7):** Rangkuman visual dan ajakan menyusun rencana perjalanan.
+
+---
+
+### Langkah 2: Penyusunan Konten Harian (7 Hari)
+
+#### **Hari 1: Malioboro**
+* **Judul:** *Susuri Malioboro, temukan denyut malam kota!*
+* **Format:** Video Reels / TikTok (Transisi dinamis dari sore ke malam hari).
+* **Fokus Konten:** Menampilkan suasana pedestrian, deretan bangunan khas, alunan musik jalanan, dan lampu-lampu kota.
+* **Ajakan (CTA):** Simpan video ini untuk panduan jalan-jalan malam Anda.
+
+#### **Hari 2: Keraton Yogyakarta**
+* **Judul:** *Masuki Keraton Yogyakarta, saksikan tradisi yang hidup!*
+* **Format:** Carousel Foto (Instagram).
+* **Fokus Konten:** Arsitektur megah keraton, ornamen Jawa klasik, abdi dalem yang bertugas, dan pusaka budaya.
+* **Ajakan (CTA):** Bagikan konten ini kepada teman perjalanan Anda.
+
+#### **Hari 3: Taman Sari**
+* **Judul:** *Jelajahi Taman Sari, singkap lorong penuh rahasia!*
+* **Format:** Video Reels / TikTok (POV berjalan melintasi lorong bawah tanah dan area kolam pemandian).
+* **Fokus Konten:** Keunikan arsitektur kompleks pemandian air, tangga bertingkat Sumur Gumuling, dan dinding cagar budaya.
+* **Ajakan (CTA):** Tandai spot foto favorit Anda di kolom komentar.
+
+#### **Hari 4: Candi Prambanan**
+* **Judul:** *Kagumi Candi Prambanan, pandang mahakarya masa lampau!*
+* **Format:** Foto Lanskap / Carousel Detail Relief.
+* **Fokus Konten:** Siluet kemegahan candi Hindu tertinggi, detail ukiran relief batu, dan halaman candi yang luas.
+* **Ajakan (CTA):** Jadwalkan kunjungan Anda saat langit cerah.
+
+#### **Hari 5: Pantai Parangtritis**
+* **Judul:** *Kejar senja di Pantai Parangtritis, rasakan deburan ombak selatan!*
+* **Format:** Video Sinematik (Golden hour & garis pantai).
+* **Fokus Konten:** Hamparan pasir pantai luas, deburan ombak Samudra Hindia, dan panorama matahari terbenam.
+* **Ajakan (CTA):** Tonton video ini dan rasakan hembusan angin laut selatan.
+
+#### **Hari 6: Malioboro & Sudut Kota Yogyakarta**
+* **Judul:** *Nyalakan malam di sudut Yogyakarta, rekam memori tak terlupakan!*
+* **Format:** Kompilasi Video Singkat (Kombinasi suasana kota dan atraksi budaya).
+* **Fokus Konten:** Kehangatan interaksi khas kota pelajar, gemerlap lampu malam di sekitar titik nol kilometer, dan keasrian sudut-sudut kota tua.
+* **Ajakan (CTA):** Simpan unggahan ini sebagai inspirasi akhir pekan.
+
+#### **Hari 7: Rangkuman 5 Destinasi Utama**
+* **Judul:** *Rangkai rencana perjalanan Anda, sambut pesona Yogyakarta!*
+* **Format:** Infografik / Panduan Rute Carousel (Memuat Malioboro, Keraton, Taman Sari, Prambanan, dan Parangtritis).
+* **Fokus Konten:** Peta rute visual yang menghubungkan kelima destinasi populer tersebut dalam satu alur perjalanan yang efisien.
+* **Ajakan (CTA):** Siapkan koper Anda dan kunjungi Yogyakarta sekarang.",116,945,901,1962,,,,good,37002
+2026-10-13 20:19:47,budi,eksperimen,gemini-3.8-flash,12.2,,"Konteks: pembaca adalah mahasiswa yang ingin liburan hemat ke Yogyakarta.
+Berikut hasil pencarian tempat populer (data contoh): Malioboro, Candi Prambanan, Keraton Yogyakarta, Taman Sari, Pantai Parangtritis.
+Susun strategi konten media sosial 1 minggu. Berpikirlah langkah demi langkah, gunakan hasil pencarian tersebut, dan ikuti pola contoh judul berikut: Susuri Malioboro, pulang bawa bahagia!; Masuki cerita sang raja!; Kejar senja di ujung selatan!. Tulis dengan kata kerja di awal. Jangan sebut harga.","Berikut adalah perancangan strategi konten media sosial 1 minggu yang disusun secara langkah demi langkah:
+
+---
+
+### **Langkah 1: Menentukan Pendekatan & Persona**
+* **Target:** Mahasiswa yang butuh liburan melepas penat setelah ujian/tugas, menyukai spot foto estetik, dan mengandalkan efisiensi rute serta transportasi publik.
+* **Nada Komunikasi:** Santai, suportif, seru, dan mengajak bertualang.
+* **Aturan Bahasa:** Judul selalu diawali kata kerja, berima/berpola seruan, serta fokus pada nilai pengalaman tanpa mencantumkan nominal biaya.
+
+---
+
+### **Langkah 2: Pemetaan Jadwal 7 Hari (Senin – Minggu)**
+
+#### **Hari 1 (Senin): Pembuka & Ikon Kota**
+* **Lokasi:** Malioboro
+* **Judul:** *Susuri Malioboro, nikmati malam tanpa beban!*
+* **Format:** Reels / TikTok (Video jalan santai dari stasiun ke Malioboro).
+* **Fokus Konten:** Menunjukkan betapa mudahnya menjangkau Malioboro dengan jalan kaki setibanya dari stasiun kereta, menikmati musisi jalanan, dan merasakan suasana malam khas Jogja.
+
+#### **Hari 2 (Selasa): Wisata Budaya & Edukasi**
+* **Lokasi:** Keraton Yogyakarta
+* **Judul:** *Masuki cerita sang raja, pelajari jejak leluhur!*
+* **Format:** Carousel Post / Infografis foto.
+* **Fokus Konten:** Tips memakai pakaian sopan untuk mahasiswa, spot koleksi bersejarah terbaik, dan informasi memanfaatkan pemandu lokal agar cerita sejarah lebih hidup.
+
+#### **Hari 3 (Rabu): Spot Visual & Lorong Bersejarah**
+* **Lokasi:** Taman Sari
+* **Judul:** *Jelajahi lorong rahasia, bidik foto estetikmu!*
+* **Format:** Reels / TikTok (Transisi outfit mahasiswa & ide pose foto).
+* **Fokus Konten:** Menemukan sudut-sudut unik seperti Sumur Gumuling dan kolam pemandian untuk mempercantik feed media sosial tanpa perlu alat fotografi yang rumit.
+
+#### **Hari 4 (Kamis): Mahakarya Warisan Dunia**
+* **Lokasi:** Candi Prambanan
+* **Judul:** *Kagumi megahnya Prambanan, saksi kisah abadi!*
+* **Format:** Carousel Post (Panduan transportasi).
+* **Fokus Konten:** Cara praktis menuju lokasi menggunakan bus Trans Jogja atau KRL, waktu terbaik berkunjung untuk menghindari terik matahari, dan spot melihat siluet candi.
+
+#### **Hari 5 (Jumat): Penutup Pekan & Pelepas Penat**
+* **Lokasi:** Pantai Parangtritis
+* **Judul:** *Kejar senja di ujung selatan, lepas semua beban!*
+* **Format:** Video sinematik / Audio tren santai.
+* **Fokus Konten:** Duduk di hamparan pasir menunggu matahari terbenam bersama teman-teman kampus, menikmati semilir angin, dan melepas stres perkuliahan.
+
+#### **Hari 6 (Sabtu): Rangkuman Rute Terintegrasi**
+* **Lokasi:** Rute Keraton – Taman Sari – Malioboro
+* **Judul:** *Gabungkan rute hemat, jalan kaki keliling kota!*
+* **Format:** Peta digital interaktif / Infografis alur jalan kaki.
+* **Fokus Konten:** Menyusun rute satu jalur yang bisa ditempuh hanya dengan berjalan kaki dari Keraton ke Taman Sari lalu berakhir di Malioboro untuk menghemat energi dan waktu.
+
+#### **Hari 7 (Minggu): Penutup & Ajakan Aksi (CTA)**
+* **Lokasi:** Kompilasi Semua Destinasi (Prambanan, Malioboro, Keraton, Taman Sari, Parangtritis)
+* **Judul:** *Simpan rencana liburan, ajak teman semester depan!*
+* **Format:** Carousel ringkasan tips (packing light, gunakan kartu mahasiswa untuk akses tertentu, andalkan bus kota).
+* **Fokus Konten:** Mendorong audiens untuk menekan tombol *Save* dan membagikan (*Share*) postingan ini ke grup chat kampus sebagai rencana libur semester berikutnya.",121,945,1101,2167,,,,good,39169
+2026-10-13 20:24:14,budi,eksperimen,gemini-3.8-flash,13,,"Berikut hasil API cuaca Yogyakarta (data contoh): Hari 1 cerah 31°C; Hari 2 berawan 30°C; Hari 3 hujan ringan 29°C.
+Buat rekomendasi liburan ke Yogyakarta dengan mengevaluasi 3 jalur alternatif (alam, budaya, kuliner), berpikir langkah demi langkah, dan mempertimbangkan data cuaca tersebut. Ikuti pola contoh judul berikut: Susuri Malioboro, pulang bawa bahagia!; Masuki cerita sang raja!; Kejar senja di ujung selatan!. Tulis dengan kata kerja di awal. Jangan sebut harga, bencana alam, atau opini wisatawan.","Berikut adalah evaluasi bertahap dan rekomendasi liburan berdasarkan data cuaca:
+
+### Langkah Evaluasi Pemilihan Jalur
+
+1. **Analisis Kondisi Cuaca:**
+   * **Hari 1 (Cerah, 31°C):** Kondisi langit terbuka dan jarak pandang maksimal, sangat ideal untuk aktivitas luar ruangan penuh.
+   * **Hari 2 (Berawan, 30°C):** Suhu lebih teduh tanpa terik matahari langsung, sangat mendukung perjalanan jalan kaki di area terbuka maupun semi-terbuka.
+   * **Hari 3 (Hujan ringan, 29°C):** Membutuhkan aktivitas di dalam ruangan atau area beratap agar mobilitas tetap nyaman.
+
+2. **Pencocokan 3 Jalur Alternatif:**
+   * **Jalur Alam:** Memerlukan pencahayaan alami dan akses jalan kering. Ditempatkan pada **Hari 1** untuk memaksimalkan panorama terbuka.
+   * **Jalur Budaya:** Melibatkan eksplorasi kompleks bersejarah dengan area jalan kaki yang luas. Ditempatkan pada **Hari 2** karena cuaca berawan memberikan kenyamanan fisik selama berjalan kaki.
+   * **Jalur Kuliner:** Berpusat pada bangunan tertutup, restoran, dan pasar tradisional beratap. Ditempatkan pada **Hari 3** sebagai adaptasi terhadap potensi basah akibat hujan ringan.
+
+---
+
+### Rekomendasi Rencana Liburan
+
+* **Hari 1 (Jalur Alam):**
+  **Taklukkan bentang alam lereng utara!**
+  * Kunjungi kawasan lereng Gunung Merapi di pagi hari untuk menikmati pemandangan saat langit bersih.
+  * Lanjutkan perjalanan ke area Hutan Pinus Mangunan untuk menikmati teduhnya pepohonan di bawah sinar matahari yang cerah.
+
+* **Hari 2 (Jalur Budaya):**
+  **Telusuri jejak peradaban masa lampau!**
+  * Eksplorasi kompleks Keraton Ngayogyakarta Hadiningrat dan Taman Sari tanpa terganggu panas terik berkat tutupan awan.
+  * Berjalan santai mengelilingi kawasan cagar budaya Kotagede untuk mengamati arsitektur peninggalan Mataram Islam.
+
+* **Hari 3 (Jalur Kuliner):**
+  **Nikmati kehangatan hidangan tempo dulu!**
+  * Kunjungi sentra Gudeg Wijilan untuk menikmati hidangan tradisional di area makan dalam ruangan.
+  * Eksplorasi lantai dasar Pasar Beringharjo untuk mencicipi aneka jajanan pasar, lalu akhiri perjalanan di sentra pembuatan bakpia Pathok sembari mengamati proses pemanggangan langsung.",133,576,1314,2023,,,,good,41192
+2026-10-13 20:27:56,budi,eksperimen,gemini-3.8-flash,13.2,,"Kamu adalah pemandu wisata ahli. Berikut hasil API cuaca Yogyakarta (data contoh): Hari 1 cerah 31°C; Hari 2 berawan 30°C; Hari 3 hujan ringan 29°C.
+Evaluasi 3 jalur itinerari alternatif ke Yogyakarta langkah demi langkah dengan mempertimbangkan data cuaca tersebut, dan ikuti pola contoh judul berikut: Susuri Malioboro, pulang bawa bahagia!; Masuki cerita sang raja!; Kejar senja di ujung selatan!. Jangan sebut harga atau bencana alam.","Halo, petualang! Sebagai pemandu wisata Anda, mari kita rancang liburan terbaik di Yogyakarta. 
+
+Kondisi cuaca kita kali ini sangat menarik: **Hari 1 cerah (31°C)** sempurna untuk aktivitas luar ruangan dan panorama terbuka, **Hari 2 berawan (30°C)** sangat nyaman untuk eksplorasi jalan kaki tanpa sengatan terik, dan **Hari 3 hujan ringan (29°C)** adalah saatnya beralih ke destinasi semi-tertutup, museum, serta wisata kuliner yang syahdu.
+
+Berikut adalah evaluasi langkah demi langkah untuk 3 jalur itinerari alternatif yang disesuaikan dengan prakiraan cuaca tersebut:
+
+---
+
+### Jalur 1: *Selami jejak budaya, rasakan magisnya kota!*
+*(Fokus: Sejarah, Candi, dan Kemegahan Kerajaan)*
+
+*   **Langkah 1 (Hari 1 - Cerah 31°C): Kompleks Percandian Prambanan & Ratu Boko**  
+    *Evaluasi:* Cuaca cerah memberikan pencahayaan alami terbaik untuk mengagumi relief megah Candi Prambanan dan menikmati panorama senja dari pelataran Ratu Boko. Manfaatkan kacamata hitam dan payung peneduh karena area terbuka ini cukup terik di siang hari.
+*   **Langkah 2 (Hari 2 - Berawan 30°C): Tamansari & Kampung Bersejarah Kotagede**  
+    *Evaluasi:* Udara berawan membuat penjelajahan lorong-lorong bawah tanah Tamansari dan jalan kaki santai menyusuri gang sempit rumah tradisional di Kotagede menjadi sangat teduh dan tidak menguras stamina.
+*   **Langkah 3 (Hari 3 - Hujan Ringan 29°C): Keraton Yogyakarta & Museum Sonobudoyo**  
+    *Evaluasi:* Sangat ideal untuk hari hujan. Sebagian besar area Keraton memiliki bangsal-bangsal beratap luas, dan Museum Sonobudoyo menyajikan ruang pameran tertutup ber-AC yang nyaman untuk mendalami artefak budaya Jawa tanpa terganggu rintik air.
+
+---
+
+### Jalur 2: *Jelajahi alam asri, tangkap pesona surgawi!*
+*(Fokus: Wisata Alam, Pantai, dan Kesejukan Lereng)*
+
+*   **Langkah 1 (Hari 1 - Cerah 31°C): Pesisir Pantai Selatan Gunungkidul**  
+    *Evaluasi:* Hari yang sempurna untuk bermain di pantai berpasir putih dan tebing karang. Langit cerah membuat warna air laut terlihat biru jernih berkilau, ideal untuk dokumentasi visual dan menikmati matahari terbenam.
+*   **Langkah 2 (Hari 2 - Berawan 30°C): Hutan Pinus Mangunan & Tebing Breksi**  
+    *Evaluasi:* Berawan adalah kondisi terbaik untuk menjelajahi alam terbuka perbukitan. Cahaya matahari yang terdistribusi merata oleh awan membuat suasana hutan pinus terasa syahdu dan sejuk untuk dijelajahi tanpa rasa gerah berlebih.
+*   **Langkah 3 (Hari 3 - Hujan Ringan 29°C): Museum Ullen Sentalu & Kedai Kopi Kaliurang**  
+    *Evaluasi:* Area Kaliurang memiliki daya tarik tersendiri saat hujan ringan. Museum Ullen Sentalu menyediakan tur pemandu di dalam ruangan yang tertata apik, ditutup dengan bersantai menikmati minuman hangat khas Jawa di lereng yang berkabut.
+
+---
+
+### Jalur 3: *Cicipi rasa otentik, borong karya seni antik!*
+*(Fokus: Seni Kontemporer, Kerajinan Tangan, dan Kuliner)*
+
+*   **Langkah 1 (Hari 1 - Cerah 31°C): Sentra Gerabah Kasongan & Galeri Seni Terbuka**  
+    *Evaluasi:* Cuaca cerah mendukung proses pengrajin gerabah lokal yang beraktivitas di ruang terbuka. Anda dapat leluasa berpindah dari satu galeri ke galeri lain serta mencoba membuat tembikar langsung di area luar ruangan.
+*   **Langkah 2 (Hari 2 - Berawan 30°C): Kawasan Benteng Vredeburg & Pasar Beringharjo**  
+    *Evaluasi:* Suhu bersahabat tanpa terik menyengat sangat pas untuk berburu batik di Beringharjo dan berjalan-jalan di halaman terbuka Benteng Vredeburg untuk menikmati arsitektur kolonial.
+*   **Langkah 3 (Hari 3 - Hujan Ringan 29°C): Jogja National Museum (JNM) & Wisata Kuliner Gudeg**  
+    *Evaluasi:* Mengalihkan perjalanan ke pameran seni kontemporer dalam ruangan di JNM adalah keputusan tepat saat rintik hujan turun. Lengkapi hari dengan singgah ke sentra kuliner gudeg hangat yang memberikan suasana nyaman dan intim.
+
+---
+
+**Saran Ahli:** Jika ini kunjungan pertama Anda, **Jalur 1** adalah pilihan paling seimbang antara pemandangan terbuka dan kenyamanan ruang berteduh. Selamat menikmati keindahan Yogyakarta!",113,1139,1055,2307,,,,good,43499
+2026-10-13 21:12:47,budi,eksperimen,gemini-3.8-flash,14,,Kamu adalah pemandu wisata. Tujuan: menulis tentang wisata Yogyakarta untuk mahasiswa. Konteks: pembaca ingin liburan hemat dan pandangan yang seimbang. Format: 3 bagian berlabel. Langkah: kategorikan jenis wisata lalu ringkas. Batasan: jangan sebut harga. Kerjakan langkah demi langkah.,"Halo rekan-rekan mahasiswa! Selamat datang di Yogyakarta. Sebagai pemandu wisata kalian, saya telah merancang panduan liburan yang seru, ramah kantong, dan tetap realistis agar agenda jalan-jalan kalian berjalan maksimal. 
+
+Berikut adalah panduan lengkapnya:
+
+---
+
+### Bagian 1: Kategori Destinasi Wisata Ramah Mahasiswa
+
+Untuk memudahkan penyusunan rencana perjalanan, destinasi di Yogyakarta dapat dikelompokkan ke dalam tiga kategori utama:
+
+1. **Wisata Sejarah & Budaya (Pusat Kota)**
+   * **Destinasi:** Kawasan Keraton Ngayogyakarta Hadiningrat, Taman Sari, dan Museum Benteng Vredeburg.
+   * **Karakteristik:** Sangat edukatif dan bernilai visual tinggi untuk dokumentasi media sosial. Lokasinya terpusat di tengah kota, sehingga mudah dijangkau dengan berjalan kaki atau transportasi umum.
+
+2. **Wisata Alam & Pemandangan (Pinggiran Kota)**
+   * **Destinasi:** Kawasan Pantai Gunungkidul, Bukit Paralayang Watugupit, dan lereng Gunung Merapi.
+   * **Karakteristik:** Menawarkan panorama alam terbuka yang cocok untuk menyegarkan pikiran dari tugas kuliah. Lebih asyik dijelajahi secara rombongan menggunakan kendaraan roda dua.
+
+3. **Wisata Ruang Publik & Budaya Komunal**
+   * **Destinasi:** Titik Nol Kilometer, pedestrian Malioboro, dan Alun-Alun Kidul.
+   * **Karakteristik:** Tempat berkumpul terbuka yang tidak memerlukan tiket masuk. Sangat hidup pada malam hari dan memberikan pengalaman interaksi sosial khas Yogyakarta.
+
+---
+
+### Bagian 2: Pandangan Seimbang (Potensi vs Realita)
+
+Agar ekspektasi kalian tetap terjaga, berikut adalah pertimbangan objektif sebelum berangkat:
+
+* **Sisi Positif:**
+  * **Aksesibilitas Tinggi:** Banyak atraksi menarik yang dapat dinikmati secara cuma-cuma atau sekadar dengan menunjukkan kartu identitas pelajar.
+  * **Atmosfer Komunitas:** Budaya nongkrong yang kental membuat mahasiswa mudah merasa seperti di rumah sendiri.
+  * **Pilihan Kuliner Melimpah:** Variasi makanan sangat beragam, mulai dari angkringan hingga warung makan kaki lima yang porsinya mengenyangkan.
+
+* **Tantangan yang Perlu Diantisipasi:**
+  * **Kepadatan Wisatawan:** Destinasi populer sangat padat di akhir pekan dan masa liburan, yang dapat mengurangi kenyamanan menikmati suasana.
+  * **Keterbatasan Angkutan Umum:** Transportasi publik berbasis bus belum menjangkau seluruh destinasi alam di pelosok, sehingga membutuhkan tenaga ekstra untuk berkendara sendiri.
+  * **Faktor Cuaca:** Suhu di pusat kota bisa sangat terik pada siang hari, sementara destinasi perbukitan rawan licin saat musim hujan.
+
+---
+
+### Bagian 3: Ringkasan & Tips Strategis Pemandu
+
+Secara keseluruhan, Yogyakarta adalah destinasi ideal bagi mahasiswa yang menginginkan perpaduan antara edukasi, keindahan alam, dan kehangatan ruang publik tanpa membebani keuangan. Kunci liburan hemat yang sukses di sini terletak pada manajemen waktu dan cara bepergian.
+
+**Tips Perjalanan:**
+* **Gunakan Transportasi Publik:** Manfaatkan jaringan bus perkotaan untuk rute dalam kota, dan pertimbangkan sewa motor secara patungan jika ingin menuju area perbukitan atau pantai.
+* **Manfaatkan Status Mahasiswa:** Selalu bawa Kartu Tanda Mahasiswa (KTM), karena beberapa situs bersejarah memberikan perlakuan khusus atau potongan tertentu bagi pelajar.
+* **Hindari Jam Sibuk:** Kunjungi situs budaya sepagi mungkin saat baru dibuka, dan nikmati ruang publik terbuka menjelang matahari terbenam untuk menghindari panas dan kerumunan berlebih.",65,829,871,1765,,,,good,45264
+2026-10-13 21:12:47,budi,eksperimen,gemini-3.8-flash,14,,Kamu adalah pemandu wisata. Tujuan: menulis tentang wisata Yogyakarta untuk mahasiswa. Konteks: pembaca ingin liburan hemat dan pandangan yang seimbang. Format: 3 bagian berlabel. Langkah: kategorikan jenis wisata lalu ringkas. Batasan: jangan sebut harga. Kerjakan langkah demi langkah.,"Halo rekan-rekan mahasiswa! Selamat datang di Yogyakarta. Sebagai pemandu wisata kalian, saya telah merancang panduan liburan yang seru, ramah kantong, dan tetap realistis agar agenda jalan-jalan kalian berjalan maksimal. 
+
+Berikut adalah panduan lengkapnya:
+
+---
+
+### Bagian 1: Kategori Destinasi Wisata Ramah Mahasiswa
+
+Untuk memudahkan penyusunan rencana perjalanan, destinasi di Yogyakarta dapat dikelompokkan ke dalam tiga kategori utama:
+
+1. **Wisata Sejarah & Budaya (Pusat Kota)**
+   * **Destinasi:** Kawasan Keraton Ngayogyakarta Hadiningrat, Taman Sari, dan Museum Benteng Vredeburg.
+   * **Karakteristik:** Sangat edukatif dan bernilai visual tinggi untuk dokumentasi media sosial. Lokasinya terpusat di tengah kota, sehingga mudah dijangkau dengan berjalan kaki atau transportasi umum.
+
+2. **Wisata Alam & Pemandangan (Pinggiran Kota)**
+   * **Destinasi:** Kawasan Pantai Gunungkidul, Bukit Paralayang Watugupit, dan lereng Gunung Merapi.
+   * **Karakteristik:** Menawarkan panorama alam terbuka yang cocok untuk menyegarkan pikiran dari tugas kuliah. Lebih asyik dijelajahi secara rombongan menggunakan kendaraan roda dua.
+
+3. **Wisata Ruang Publik & Budaya Komunal**
+   * **Destinasi:** Titik Nol Kilometer, pedestrian Malioboro, dan Alun-Alun Kidul.
+   * **Karakteristik:** Tempat berkumpul terbuka yang tidak memerlukan tiket masuk. Sangat hidup pada malam hari dan memberikan pengalaman interaksi sosial khas Yogyakarta.
+
+---
+
+### Bagian 2: Pandangan Seimbang (Potensi vs Realita)
+
+Agar ekspektasi kalian tetap terjaga, berikut adalah pertimbangan objektif sebelum berangkat:
+
+* **Sisi Positif:**
+  * **Aksesibilitas Tinggi:** Banyak atraksi menarik yang dapat dinikmati secara cuma-cuma atau sekadar dengan menunjukkan kartu identitas pelajar.
+  * **Atmosfer Komunitas:** Budaya nongkrong yang kental membuat mahasiswa mudah merasa seperti di rumah sendiri.
+  * **Pilihan Kuliner Melimpah:** Variasi makanan sangat beragam, mulai dari angkringan hingga warung makan kaki lima yang porsinya mengenyangkan.
+
+* **Tantangan yang Perlu Diantisipasi:**
+  * **Kepadatan Wisatawan:** Destinasi populer sangat padat di akhir pekan dan masa liburan, yang dapat mengurangi kenyamanan menikmati suasana.
+  * **Keterbatasan Angkutan Umum:** Transportasi publik berbasis bus belum menjangkau seluruh destinasi alam di pelosok, sehingga membutuhkan tenaga ekstra untuk berkendara sendiri.
+  * **Faktor Cuaca:** Suhu di pusat kota bisa sangat terik pada siang hari, sementara destinasi perbukitan rawan licin saat musim hujan.
+
+---
+
+### Bagian 3: Ringkasan & Tips Strategis Pemandu
+
+Secara keseluruhan, Yogyakarta adalah destinasi ideal bagi mahasiswa yang menginginkan perpaduan antara edukasi, keindahan alam, dan kehangatan ruang publik tanpa membebani keuangan. Kunci liburan hemat yang sukses di sini terletak pada manajemen waktu dan cara bepergian.
+
+**Tips Perjalanan:**
+* **Gunakan Transportasi Publik:** Manfaatkan jaringan bus perkotaan untuk rute dalam kota, dan pertimbangkan sewa motor secara patungan jika ingin menuju area perbukitan atau pantai.
+* **Manfaatkan Status Mahasiswa:** Selalu bawa Kartu Tanda Mahasiswa (KTM), karena beberapa situs bersejarah memberikan perlakuan khusus atau potongan tertentu bagi pelajar.
+* **Hindari Jam Sibuk:** Kunjungi situs budaya sepagi mungkin saat baru dibuka, dan nikmati ruang publik terbuka menjelang matahari terbenam untuk menghindari panas dan kerumunan berlebih.",65,829,871,1765,,,,good,47029
+2026-10-14 05:35:27,budi,eksperimen,gemini-3.8-flash,14.2,,Kamu adalah pemandu wisata. Tujuan: menulis tentang wisata Yogyakarta untuk mahasiswa. Konteks: pembaca ingin pandangan yang seimbang. Format: 3 bagian berlabel. Langkah: kategorikan jenis wisata lalu ringkas. Batasan: jangan sebut harga. Kerjakan langkah demi langkah dan jangan membahas bencana alam atau cuaca ekstrem.,"Halo rekan-rekan mahasiswa! Sebagai pemandu wisata, saya akan membantu kalian memahami potensi wisata Yogyakarta secara objektif agar agenda liburan maupun studi lapangan kalian berjalan optimal.
+
+Berikut adalah ulasan wisata Yogyakarta langkah demi langkah:
+
+---
+
+### Bagian 1: Kategorisasi Jenis Wisata
+
+Untuk mempermudah eksplorasi kalian, destinasi di Yogyakarta dikelompokkan ke dalam tiga kategori utama:
+
+1. **Wisata Sejarah dan Budaya**  
+   Meliputi Keraton Yogyakarta, Pura Pakualaman, Tamansari, dan Candi Prambanan. Kawasan ini sarat nilai edukasi yang relevan untuk memperkaya wawasan sejarah, antropologi, dan arsitektur tradisional.
+2. **Wisata Alam dan Lanskap**  
+   Meliputi deretan pantai tebing di kawasan selatan serta perbukitan hijau di kawasan barat dan utara. Lokasi-lokasi ini menawarkan ruang terbuka yang menyegarkan untuk melepas kepenatan rutinitas akademik.
+3. **Wisata Kreatif, Seni, dan Ruang Publik**  
+   Kawasan seperti Kotagede, galeri-galeri seni kontemporer di Bantul, hingga sentra komunitas di Prawirotaman. Area ini ideal untuk mahasiswa yang mencari inspirasi kreatif, tempat diskusi santai, atau berjejaring dengan komunitas lokal.
+
+---
+
+### Bagian 2: Pandangan Seimbang (Daya Tarik vs Tantangan)
+
+Sebelum berangkat, penting untuk mempertimbangkan sisi positif dan hambatan operasional di lapangan:
+
+* **Sisi Positif (Daya Tarik):**  
+  Yogyakarta memiliki atmosfer yang sangat ramah terhadap kalangan muda. Keberadaan transportasi umum seperti jaringan bus perkotaan mempermudah mobilitas antarruang publik. Selain itu, dinamika kotanya menyediakan banyak ruang tenang untuk berdiskusi, mengerjakan tugas bersama kelompok, atau sekadar menikmati obrolan hangat hingga larut malam.
+* **Sisi Realitas (Tantangan):**  
+  Pada akhir pekan dan musim liburan, kawasan pusat kota kerap mengalami kepadatan arus lalu lintas dan antrean panjang pejalan kaki. Selain itu, beberapa destinasi alam unggulan berada di wilayah terluar yang memerlukan waktu tempuh perjalanan cukup panjang dari pusat studi, sehingga membutuhkan stamina fisik yang prima serta perencanaan rute yang matang.
+
+---
+
+### Bagian 3: Ringkasan dan Rekomendasi Mahasiswa
+
+**Ringkasan:**  
+Yogyakarta menawarkan ekosistem wisata yang utuh bagi mahasiswa, mulai dari pendalaman materi edukatif hingga eksplorasi ruang sosial-kreatif. Keseimbangan antara nilai budaya yang autentik dan keterbukaan komunitasnya menjadikan kota ini laboratorium sosial sekaligus tempat rekreasi yang menarik.
+
+**Rekomendasi Langkah Kunjungan:**  
+1. Pilih waktu kunjungan pada hari kerja (*weekdays*) untuk menghindari kepadatan di situs-situs bersejarah populer.  
+2. Kelompokkan destinasi berdasarkan satu zona wilayah geografis dalam satu hari agar waktu tidak habis di perjalanan.  
+3. Manfaatkan moda transportasi publik lokal untuk rute dalam kota demi efisiensi navigasi di tengah padatnya lalu lintas.",70,669,1203,1942,,,,good,48971

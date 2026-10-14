@@ -1,0 +1,9 @@
+[theme]
+primaryColor = "#4C9AFF"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"      # menyembunyikan tombol Deploy
+
+[browser]
+gatherUsageStats = false
