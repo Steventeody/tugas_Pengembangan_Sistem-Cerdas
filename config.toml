@@ -1,9 +1,19 @@
+# Simpan file ini di:  <folder proyek>/.streamlit/config.toml   (BUKAN di folder utama)
 [theme]
-primaryColor = "#4C9AFF"
+base = "light"
+primaryColor = "#D97757"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8F7F5"
+textColor = "#1A1A1A"
 font = "sans serif"
+baseRadius = "large"
+
+[theme.sidebar]
+backgroundColor = "#F8F7F5"
+secondaryBackgroundColor = "#F0EFEA"
 
 [client]
-toolbarMode = "minimal"      # menyembunyikan tombol Deploy
+toolbarMode = "minimal"      # hanya menu titik tiga, tanpa tombol Deploy
 
 [browser]
 gatherUsageStats = false
