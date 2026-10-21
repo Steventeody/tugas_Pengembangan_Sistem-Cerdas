@@ -1,8 +1,8 @@
-# AI Token Lab
+# PANDU (AI Token Lab)
 
-Aplikasi chatbot teks berbasis **Google Gemini** untuk **eksperimen penggunaan token**. Setiap percobaan mencatat token input, output, dan thinking, lalu hasilnya dipakai untuk membandingkan struktur prompt dan teknik prompting.
+Aplikasi chatbot teks berbasis **Google Gemini** dan **GLM (Z.ai)** untuk **eksperimen penggunaan token**. Setiap percobaan mencatat token input, output, dan thinking, lalu hasilnya dipakai untuk membandingkan struktur prompt, teknik prompting, dan model.
 
-> Tugas kelompok **Gravity Team**, mata kuliah **Pengembangan Sistem Cerdas**.
+> Tugas kelompok mata kuliah **Pengembangan Sistem Cerdas**.
 
 ## Anggota dan pembagian tugas
 
@@ -14,38 +14,36 @@ Aplikasi chatbot teks berbasis **Google Gemini** untuk **eksperimen penggunaan t
 
 ## Tujuan
 
-Mengetahui bagaimana kombinasi struktur prompt (persona, format, batasan, konteks, dan lain-lain) dan teknik prompting (zero-shot, few-shot, chain of thought, dan lain-lain) memengaruhi **jumlah token** dan **kualitas jawaban** Gemini.
+Mengetahui bagaimana kombinasi struktur prompt (persona, format, batasan, konteks, dan lain-lain) dan teknik prompting (zero-shot, few-shot, chain of thought, dan lain-lain) memengaruhi **jumlah token** dan **kualitas jawaban** model.
 
 ## Struktur proyek
 
 ```
 .
-├── app.py              # aplikasi utama
+├── app.py                  # aplikasi utama (mode Chat dan Eksperimen)
 ├── pages/
-│   └── 1_Dashboard.py  # halaman dashboard
-├── data/               # file catatan yang dibuat otomatis oleh aplikasi
-├── requirements.txt    # daftar library
-├── .env.example        # contoh isi file .env
+│   └── 1_Dashboard.py      # halaman dashboard
+├── gambar/
+│   └── 1.png               # logo aplikasi
+├── .streamlit/
+│   └── config.toml         # tema tampilan
+├── data/                   # file catatan yang dibuat otomatis oleh aplikasi
+├── cek_key.py              # skrip bantu untuk memeriksa API key
+├── requirements.txt        # daftar library
 └── .gitignore
 ```
 
 File `.env` (berisi API key) ada di komputer masing-masing dan **tidak ikut diupload** ke GitHub.
 
-## Tampilan aplikasi
-
-Halaman utama (eksperimen prompt dan chat persona):
-
-![Tampilan halaman utama aplikasi](gambar/aplikasi.png)
-
-Halaman Dashboard dilengkapi di bagian [Dashboard](#dashboard).
-
 ## Arsitektur
 
 ```mermaid
 flowchart LR
-    U[Pengguna] -->|prompt + nomor kombinasi| A[Aplikasi Streamlit<br/>app.py]
-    A -->|API key dari .env| G[Gemini API]
+    U[Pengguna] -->|prompt| A[Aplikasi Streamlit<br/>app.py]
+    A -->|GEMINI_API_KEY| G[Gemini API]
+    A -->|ZAI_API_KEY| Z[Z.ai API<br/>model GLM]
     G -->|jawaban + jumlah token| A
+    Z -->|jawaban + jumlah token| A
     A -->|menulis| D[(Folder data/)]
     D -->|dibaca| H[Dashboard<br/>pages/]
     H --> V[Grafik dan tabel token]
@@ -53,31 +51,37 @@ flowchart LR
 
 | Komponen | Fungsi |
 |---|---|
-| `app.py` | Aplikasi utama: mengirim prompt ke Gemini, menampilkan jawaban dan token, menyimpan log, serta chat dengan persona |
+| `app.py` | Aplikasi utama: mode **Chat** (dengan riwayat obrolan) dan mode **Eksperimen** (mengirim prompt, menampilkan jawaban dan token, menyimpan log) |
 | `pages/1_Dashboard.py` | Dashboard token dan jatah request (dibaca dari folder `data/`) |
 | `data/` | File catatan yang ditulis aplikasi (lihat bagian Format data) |
-| `.env` | Menyimpan API key Gemini milik masing-masing anggota (tidak ikut diupload) |
+| `.env` | Menyimpan API key milik masing-masing anggota (tidak ikut diupload) |
 | `requirements.txt` | Daftar library beserta versinya |
 
-## Cara kerja
+## Fitur
 
-1. Pengguna mengisi **nomor kombinasi** dan **prompt**, lalu menekan **Kirim ke Gemini**.
-2. Aplikasi mengirim prompt ke Gemini sebagai percakapan baru (tanpa riwayat), supaya token input hanya berasal dari prompt itu.
-3. Gemini mengembalikan jawaban dan data penggunaan token (input, output, thinking, total).
+**Dua mode di sidebar**
+
+- **Chat**: mengobrol dengan persona tetap (pemandu wisata Yogyakarta yang ramah). Obrolan tersimpan sebagai riwayat dan bisa dibuka atau dihapus lagi dari sidebar. Tersedia sakelar **Pencarian web** untuk pertanyaan yang butuh informasi terbaru.
+- **Eksperimen**: mengirim prompt apa adanya (tanpa persona tambahan) bersama **nomor kombinasi**, lalu mencatat token dan penilaian kualitas ke log.
+
+**Fitur lain**
+
+- Dua model yang bisa dipilih di sidebar (**Model**): `gemini-3.8-flash` (Gemini) dan `glm-4.7-flash` (Z.ai).
+- Pencatatan token input, output, thinking, dan total untuk setiap request.
+- Pemantauan batas request (RPD, RPM) dan token masuk per menit (TPM), dengan peringatan kalau hampir atau sudah melewati batas.
+- **Hitungan jatah request dipisah per API key**: ganti API key berarti hitungan RPD/RPM/TPM mulai dari 0 lagi untuk key itu.
+- Request yang gagal karena server sibuk (misalnya kode 5xx atau 1305/1302 pada Z.ai) dicoba ulang otomatis beberapa kali.
+- Log eksperimen bisa dilihat dan diunduh dalam bentuk CSV.
+
+## Cara kerja (mode Eksperimen)
+
+1. Pengguna mengisi **nomor kombinasi** dan **prompt**, lalu menekan **Kirim ke Gemini** (atau **Kirim ke GLM**, tergantung model yang dipilih).
+2. Aplikasi mengirim prompt sebagai percakapan baru (tanpa riwayat), supaya token input hanya berasal dari prompt itu.
+3. Model mengembalikan jawaban dan data penggunaan token (input, output, thinking, total).
 4. Aplikasi menampilkan jawaban dan token, lalu pengguna menulis **deskripsi kualitas** hasil.
 5. Setelah menekan **Simpan ke log**, satu baris ditulis ke `data/log.csv`.
 6. Setiap request yang berhasil juga dicatat di `data/pemakaian.csv` (dipakai untuk menghitung token masuk per menit) walaupun hasilnya tidak disimpan ke log.
 7. Dashboard membaca file di `data/` dan menampilkan ringkasan, grafik, serta tabel.
-
-## Fitur
-
-- Eksperimen prompt dengan pencatatan token input, output, thinking, dan total.
-- Chat dengan persona (AI custom) yang bisa dipilih atau ditulis sendiri.
-- Parameter sampling opsional (temperature, top-p, top-k).
-- Pemantauan batas request (RPD, RPM) dan token masuk per menit (TPM). Batas diatur di halaman Dashboard.
-- **Hitungan jatah request dipisah per API key**: ganti API key berarti hitungan RPD/RPM/TPM mulai dari 0 lagi untuk key itu.
-- Fitur **Samakan dengan AI Studio** di Dashboard untuk menyesuaikan hitungan hari ini dengan angka di AI Studio (berlaku per API key).
-- Unduh log dalam bentuk CSV.
 
 ## Library yang dipakai
 
@@ -85,6 +89,7 @@ flowchart LR
 |---|---|---|
 | `streamlit` | 1.65.0 | Tampilan web aplikasi dan dashboard |
 | `google-genai` | 2.29.0 | Menghubungi Gemini API |
+| `requests` | sesuai `requirements.txt` | Menghubungi API Z.ai untuk model GLM |
 | `pandas` | 3.0.6 | Membaca dan menulis log CSV serta mengolah data |
 | `plotly` | 7.1.0 | Grafik pada dashboard |
 | `python-dotenv` | 1.2.4 | Membaca API key dari file `.env` |
@@ -99,6 +104,7 @@ Prasyarat:
 - **Python 3.11 atau lebih baru** (centang *Add Python to PATH* saat instalasi di Windows).
 - **Git** untuk mengunduh proyek.
 - API key Gemini milik sendiri dari <https://aistudio.google.com/apikey>.
+- (Opsional) API key Z.ai kalau ingin memakai model GLM.
 
 **1. Unduh proyek**
 
@@ -115,25 +121,14 @@ pip install -r requirements.txt
 
 **3. Siapkan API key**
 
-Windows:
+Buat file baru bernama `.env` di folder yang sama dengan `app.py`, lalu isi dengan key milik sendiri:
 
 ```
-copy .env.example .env
+GEMINI_API_KEY=isi_key_gemini_kamu_di_sini
+ZAI_API_KEY=isi_key_zai_kamu_di_sini
 ```
 
-macOS atau Linux:
-
-```
-cp .env.example .env
-```
-
-Buka file `.env`, lalu isi dengan key milik sendiri:
-
-```
-GEMINI_API_KEY=isi_key_kamu_di_sini
-```
-
-API key juga bisa diisi langsung di sidebar aplikasi (bagian **Akun & model**) tanpa file `.env`.
+`ZAI_API_KEY` hanya perlu diisi kalau kamu memilih model GLM. Setelah mengubah `.env`, jalankan ulang Streamlit.
 
 **4. Jalankan aplikasi**
 
@@ -150,41 +145,44 @@ Aplikasi terbuka di browser (biasanya <http://localhost:8501>). Halaman **Dashbo
 | Masalah | Penyebab dan solusi |
 |---|---|
 | `streamlit` tidak dikenali | Library belum terpasang. Jalankan `pip install -r requirements.txt` (langkah 2). |
-| Error 429 / jatah habis | Batas request (RPD/RPM) Gemini tercapai. Tunggu 1 menit, atau coba lagi besok kalau batas hariannya yang habis. |
-| Nama model ditolak | Samakan isi **Nama model** di sidebar dengan `model=` pada tombol *Dapatkan kode* di AI Studio. |
-| Angka RPD berbeda dengan AI Studio | Aplikasi hanya menghitung request lewat aplikasi ini. Gunakan **Samakan dengan AI Studio** di Dashboard. |
+| Muncul pesan "API key belum ditemukan" | File `.env` belum dibuat, salah letak, atau nama variabelnya salah. Pastikan `GEMINI_API_KEY` (atau `ZAI_API_KEY` untuk GLM) ada di `.env` satu folder dengan `app.py`, lalu jalankan ulang Streamlit. |
+| Error 429 / jatah habis | Batas request (RPD/RPM) tercapai. Tunggu 1 menit, atau coba lagi besok kalau batas hariannya yang habis. |
+| GLM kadang gagal dengan kode 1305 atau 1302 | Server Z.ai sedang sibuk. Aplikasi mencoba ulang otomatis; kalau tetap gagal, kirim lagi beberapa saat kemudian. |
+| Nama model ditolak | Nama model di aplikasi tidak lagi tersedia di penyedia. Cek nama model terbaru di dokumentasi Gemini atau Z.ai. |
+| Angka jatah request berbeda dengan dashboard penyedia | Aplikasi hanya menghitung request yang lewat aplikasi ini. Pemakaian di luar aplikasi (misalnya langsung di AI Studio) tidak ikut terhitung. |
 
 ## Format data
 
-Semua file ditulis otomatis oleh aplikasi di folder `data/` dan ikut diupload ke GitHub sebagai bukti hasil eksperimen. API key tidak pernah ditulis di file-file ini (hanya kode hash pendek).
+File berikut ditulis otomatis oleh aplikasi di folder `data/`. API key tidak pernah ditulis di file-file ini (hanya kode hash pendek).
 
-**`data/log.csv`** berisi hasil eksperimen yang disimpan, satu baris per percobaan.
+**`data/log.csv`** berisi hasil eksperimen yang disimpan, satu baris per percobaan. File ini ikut diupload ke GitHub sebagai bukti hasil eksperimen.
 
 | Kolom | Arti |
 |---|---|
 | `waktu`, `anggota`, `model` | Waktu, nama pengguna, dan model yang dipakai |
 | `jenis` | `eksperimen` atau `chat` |
 | `nomor_kombinasi` | Nomor kombinasi pada tabel dosen (untuk chat berisi `chat`) |
-| `persona` | Persona yang dipakai: kalimat persona dari prompt (eksperimen), nama persona (chat), atau `Tanpa persona` |
-| `prompt`, `jawaban` | Prompt yang dikirim dan jawaban Gemini |
+| `persona` | Persona yang dipakai: kalimat persona dari prompt (eksperimen) atau `Tanpa persona` |
+| `prompt`, `jawaban` | Prompt yang dikirim dan jawaban model |
 | `input_tokens`, `output_tokens`, `thinking_tokens`, `total_tokens` | Token yang dilaporkan API |
-| `temperature`, `top_p`, `top_k` | Parameter manual (kosong berarti nilai bawaan) |
+| `temperature`, `top_p`, `top_k` | Parameter sampling (kosong berarti nilai bawaan model; aplikasi tidak lagi mengaturnya manual) |
 | `kualitas` | Penilaian kualitas oleh pengguna |
 | `total_kumulatif` | Total token yang menumpuk sampai baris itu |
 
 **`data/pemakaian.csv`** mencatat token semua request yang berhasil, disimpan atau tidak (kolom: `waktu`, `model`, `anggota`, `kunci`, `input_tokens`, `output_tokens`, `thinking_tokens`, `total_tokens`). Kolom `kunci` berisi kode pendek hasil hash dari API key, bukan key aslinya.
 
-**`data/request_hits.txt`** mencatat waktu setiap request yang dikirim ke Gemini, termasuk yang gagal atau diulang, dengan format `waktu|kode_key`.
+**`data/request_hits.txt`** mencatat waktu setiap request yang dikirim ke model, termasuk yang gagal atau diulang, dengan format `waktu|kode_key`.
 
-**`data/pengaturan.json`** menyimpan batas request (RPD, RPM, TPM) yang diatur di sidebar halaman Dashboard, serta penyesuaian "Samakan dengan AI Studio" untuk tiap API key.
+**`data/pengaturan.json`** menyimpan batas request (RPD, RPM, TPM) untuk tiap penyedia serta penyesuaian jatah per API key.
+
+**`data/riwayat_chat.json`** menyimpan riwayat obrolan mode Chat. File ini hanya ada di komputer masing-masing dan **tidak ikut diupload** ke GitHub karena berisi isi percakapan.
 
 ## Topik dan persona chatbot
 
 - **Topik:** wisata Yogyakarta.
-- **Persona:** pemandu wisata yang ramah dan penuh semangat.
-- Pada eksperimen, persona ditulis langsung di dalam teks prompt pada kombinasi yang memuat elemen *Persona/role* (nomor 3, 3.2, 4, 4.2, 5, 5.2, 6, 6.2, 9.2, 13.2, 14, 14.2). Kombinasi lain tidak memakai persona.
+- **Persona:** pemandu wisata yang ramah dan penuh semangat. Pada mode Chat, persona ini dipasang tetap sebagai instruksi sistem.
+- Pada mode Eksperimen, persona (kalau ada) ditulis langsung di dalam teks prompt, pada kombinasi yang memuat elemen *Persona/role* (nomor 3, 3.2, 4, 4.2, 5, 5.2, 6, 6.2, 9.2, 13.2, 14, 14.2). Kombinasi lain tidak memakai persona.
 - Aplikasi mencatat persona di kolom `persona` pada log: kalimat pertama prompt yang diawali "Kamu adalah ..." atau "Tanpa persona".
-- Pada tab Chat Persona, persona dipilih dari daftar atau ditulis sendiri dan dipasang sebagai instruksi sistem.
 
 ## Metode eksperimen
 
@@ -192,7 +190,7 @@ Semua file ditulis otomatis oleh aplikasi di folder `data/` dan ikut diupload ke
 - Tiap percobaan dikirim sebagai percakapan baru.
 - Model, parameter sampling (bawaan), dan topik dijaga sama di semua baris supaya perbandingan adil.
 - Kualitas dinilai oleh anggota kelompok dengan rubrik: kesesuaian dengan tugas, struktur atau format, kepatuhan terhadap larangan, dan panjang jawaban.
-- Model yang dipakai: **gemini-3.8-flash**, dijalankan pada **12 sampai 14 Oktober 2026**.
+- Model yang dipakai pada tabel hasil di bawah: **gemini-3.8-flash**, dijalankan pada **12 sampai 14 Oktober 2026**.
 
 ## Hasil
 
@@ -242,21 +240,21 @@ Token tiap kombinasi (dari `data/log.csv`):
 
 ## Dashboard
 
-Halaman Dashboard membaca file di `data/` dan memiliki empat tab:
+Halaman **Dashboard PANDU** membaca file di `data/`. Filter di sidebar: **Jenis**, **Penyedia**, **Model**, dan **Jatah request untuk** (memilih penyedia yang jatahnya ditampilkan). Isinya terbagi dalam lima tab:
 
-- **Ringkasan**: jatah request hari ini (RPD, sisa, TPM), jumlah request per hari, proporsi token input/output/thinking, dan total token yang menumpuk.
+- **Ringkasan**: jumlah percobaan, total dan rata-rata token, rasio output+thinking terhadap input, jatah request harian (RPD, RPM, TPM), token per hari, proporsi token input/output/thinking, dan total token yang menumpuk.
+- **Per model**: perbandingan rata-rata dan total token antar model (Gemini dan GLM).
 - **Per kombinasi**: rata-rata token untuk tiap nomor kombinasi.
 - **Analisis**: hubungan token input dengan jumlah elemen struktur prompt, token output dan thinking dengan jumlah teknik prompting, serta sebaran token input terhadap output + thinking.
-- **Data**: tabel log lengkap.
+- **Data**: tabel log lengkap dan tombol unduh CSV.
 
-Batas RPD, RPM, dan TPM serta fitur **Samakan dengan AI Studio** diatur di sidebar Dashboard.
-
-![Tampilan halaman Dashboard](gambar/dashboard.png)
+Angka batas RPD, RPM, dan TPM bawaan hanyalah perkiraan. Cocokkan dengan halaman batas kecepatan di AI Studio (Gemini) atau dashboard Z.ai (GLM).
 
 ## Keterbatasan
 
 - Jumlah percobaan per kombinasi sedikit (satu kali), sehingga hasil bisa berbeda jika diulang.
 - Penilaian kualitas bersifat subjektif.
 - Jatah request harian dibatasi (versi gratis), sehingga eksperimen dijalankan bertahap.
-- Google tidak menyediakan cara mengambil sisa kuota lewat API key, sehingga jatah request dihitung dari request yang dikirim lewat aplikasi ini. Pemakaian di luar aplikasi (misalnya AI Studio) tidak ikut terhitung kecuali disamakan lewat fitur **Samakan dengan AI Studio**.
+- Penyedia tidak menyediakan cara mengambil sisa kuota lewat API key, sehingga jatah request dihitung dari request yang dikirim lewat aplikasi ini. Pemakaian di luar aplikasi tidak ikut terhitung.
+- Model GLM dipanggil tanpa streaming, dan jumlah token thinking bergantung pada data yang dikembalikan Z.ai, sehingga bisa berbeda cara hitungnya dengan Gemini.
 - Hasil berlaku untuk model dan tanggal yang dicatat.
