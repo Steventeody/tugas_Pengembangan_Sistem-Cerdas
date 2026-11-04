@@ -1,80 +1,14 @@
-import base64
-import hashlib
-import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
-from dotenv import load_dotenv
-
-load_dotenv(override=True)                     # baca API key dari file .env
 
 LOG_FILE = "data/log.csv"                      # file yang sama dengan yang ditulis app.py
 C_IN, C_OUT, C_THINK = "#6D8FD0", "#D98C5F", "#9C8CBF"       # palet lembut yang serasi dengan tema krem PANDU
 WARNA = {"Input": C_IN, "Output": C_OUT, "Thinking": C_THINK}
-HITS_FILE = "data/request_hits.txt"            # dicatat oleh app.py tiap request ke model
-SETTING_FILE = "data/pengaturan.json"          # batas RPD / RPM / TPM (dibaca juga oleh app.py)
-USAGE_FILE = "data/pemakaian.csv"              # token SEMUA request yang berhasil (dicatat app.py)
-
-
-# Angka awal batas untuk GLM (Z.ai). Hanya perkiraan: cocokkan dengan halaman Rate Limits di dashboard Z.ai.
-BATAS_GLM = {"rpd": 1000, "rpm": 60, "tpm": 1000000}
-# Angka awal batas untuk Gemini (perkiraan): cocokkan dengan Batasan Kecepatan di Google AI Studio.
-BATAS_GEMINI = {"rpd": 20, "rpm": 5, "tpm": 250000}
-
-# Jatah request mengikuti filter "Penyedia": tiap penyedia punya API key, batas, dan teks sendiri.
-CFG = {
-    "Z.ai (GLM)": {"env": ["ZAI_API_KEY"], "batas": BATAS_GLM, "label": "GLM / Z.ai", "singkat": "GLM",
-                   "dashboard": "dashboard Z.ai", "halaman_batas": "dashboard Z.ai > Rate Limits"},
-    "Gemini": {"env": ["GEMINI_API_KEY", "GOOGLE_API_KEY"], "batas": BATAS_GEMINI, "label": "Gemini / AI Studio",
-               "singkat": "Gemini", "dashboard": "AI Studio", "halaman_batas": "AI Studio > Batasan Kecepatan"},
-}
-
-
-def baca_pengaturan():
-    baku = {"rpd": 20, "rpm": 5, "tpm": 250000,
-            "offset_kunci": {}}                   # penyesuaian manual dari AI Studio, dicatat PER API key (berlaku 1 hari)
-    try:
-        with open(SETTING_FILE) as f:
-            baku.update(json.load(f))
-    except Exception:
-        pass
-    return baku
-
-
-def simpan_pengaturan(**perubahan):
-    data = baca_pengaturan()
-    data.update({k: (v if isinstance(v, (str, dict)) else int(v)) for k, v in perubahan.items()})
-    os.makedirs("data", exist_ok=True)
-    with open(SETTING_FILE, "w") as f:
-        json.dump(data, f)
-
-
-try:
-    from zoneinfo import ZoneInfo
-    PASIFIK = ZoneInfo("America/Los_Angeles")      # Google mereset kuota harian tengah malam waktu Pasifik
-except Exception:
-    PASIFIK = None                                 # tzdata belum terpasang: pakai tanggal laptop
-
-
-def hari_google(waktu=None):
-    """Tanggal 'hari' menurut Google. waktu = datetime lokal (tanpa zona); kosong = sekarang."""
-    waktu = waktu or datetime.now()
-    if PASIFIK is None:
-        return waktu.strftime("%Y-%m-%d")
-    return waktu.astimezone(PASIFIK).strftime("%Y-%m-%d")
-
-
-def jam_reset():
-    """Jam reset harian berikutnya dalam waktu laptop (HH:MM), atau None kalau zona waktu tidak tersedia."""
-    if PASIFIK is None:
-        return None
-    sekarang = datetime.now(PASIFIK)
-    tengah = (sekarang + timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
-    return tengah.astimezone().strftime("%H:%M")
 
 
 def baca_waktu(teks):
@@ -87,89 +21,21 @@ def baca_waktu(teks):
     return None
 
 
-def id_kunci(kunci):
-    """Kode pendek dari API key (hash, bukan key aslinya). Harus sama dengan di app.py."""
-    return hashlib.sha256(kunci.encode()).hexdigest()[:8] if kunci else ""
-
-
-def kunci_aktif(penyedia="Z.ai (GLM)"):
-    """API key penyedia yang dipilih, dibaca dari file .env."""
-    for nama in CFG[penyedia]["env"]:
-        if os.getenv(nama):
-            return os.getenv(nama)
-    return ""
-
-
-KID = id_kunci(kunci_aktif())     # diganti sesuai filter Penyedia setelah filter dibaca
-
-
-def hitung_tpm():
-    """Token INPUT dalam 60 detik terakhir untuk API key aktif (itulah yang dihitung TPM)."""
-    if not os.path.exists(USAGE_FILE):
-        return 0
-    d = pd.read_csv(USAGE_FILE)
-    if "kunci" not in d.columns or not KID:
-        return 0
-    d = d[d["kunci"].fillna("") == KID]
-    batas = datetime.now() - timedelta(seconds=60)
-    ada = d["waktu"].apply(baca_waktu).apply(lambda w: w is not None and w >= batas)
-    return int(pd.to_numeric(d.loc[ada, "input_tokens"], errors="coerce").fillna(0).sum())
-
-
-def baca_hits():
-    """Daftar waktu request yang dikirim dengan API key aktif (teks 'YYYY-MM-DD HH:MM:SS').
-    Catatan lama (tanpa kode key) dan request dari key lain tidak ikut."""
-    if not os.path.exists(HITS_FILE) or not KID:
-        return []
-    hasil = []
-    with open(HITS_FILE) as f:
-        for b in f:
-            teks, _, kode = b.strip().partition("|")
-            if teks and kode == KID:
-                hasil.append(teks)
-    return hasil
-
-
-def offset_hari_ini():
-    """Penyesuaian 'Samakan' untuk API key aktif, kalau dibuat hari ini."""
-    o = baca_pengaturan().get("offset_kunci", {}).get(KID)
-    return int(o.get("rpd", 0)) if o and o.get("hari") == hari_google() else 0
-
-
-def hitung_mentah():
-    """Jumlah request hari ini (menurut Google) murni dari catatan aplikasi, tanpa penyesuaian manual."""
-    hari = hari_google()
-    return sum(1 for w in (baca_waktu(h) for h in baca_hits()) if w is not None and hari_google(w) == hari)
-
-
 def penyedia_dari_model(nama_model):
     m = str(nama_model).lower()
     return "Z.ai (GLM)" if "glm" in m else "Gemini" if "gemini" in m else "Lainnya"
 
 
-def singkat(n):
-    """1000000 -> '1M', 250000 -> '250k' (supaya muat di kartu angka)."""
-    n = int(n)
-    return f"{n / 1_000_000:g}M" if n >= 1_000_000 else f"{n / 1_000:g}k" if n >= 1_000 else str(n)
-
-
-def token_hari_ini():
-    """Total token (semua request berhasil) hari ini untuk API key aktif."""
-    if not os.path.exists(USAGE_FILE) or not KID:
-        return 0
-    u = pd.read_csv(USAGE_FILE)
-    if "kunci" not in u.columns:
-        return 0
-    u = u[u["kunci"].fillna("") == KID]
-    hari = hari_google()
-    waktu = [baca_waktu(t) for t in u["waktu"]]          # datetime biasa (bukan Timestamp pandas) supaya zona waktu benar
-    ada = [w is not None and hari_google(w) == hari for w in waktu]
-    return int(pd.to_numeric(u.loc[ada, "total_tokens"], errors="coerce").fillna(0).sum())
-
-
 def rapikan(fig, judul, tinggi=340):
     fig.update_layout(title=judul, height=tinggi, margin=dict(l=10, r=10, t=50, b=10),
-                      legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="right", x=1))
+                      font=dict(family="Inter, -apple-system, Segoe UI, sans-serif", color="#1A1A1A"),
+                      legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="right", x=1, title_text=""),
+                      plot_bgcolor="#FFFFFF", paper_bgcolor="#FFFFFF", bargap=0.35, title_font=dict(size=15))
+    if fig.data and fig.data[0].type != "pie":                 # donut tidak punya sumbu
+        fig.update_xaxes(showgrid=False, linecolor="#D4D3CF", ticks="")
+        fig.update_yaxes(gridcolor="#EFEEE9", zeroline=False, ticks="")
+        if fig.data[0].type == "bar" and fig.layout.barmode == "group" and getattr(fig.data[0], "orientation", "v") != "h":
+            fig.update_traces(texttemplate="%{y:,.0f}", textposition="outside", cliponaxis=False, textfont=dict(size=11, color="#555555"))
     return fig
 
 
@@ -185,10 +51,58 @@ def norm_nomor(n):
     if pd.isna(n):
         return n
     try:
-        f = float(n)
+        f = float(str(n).replace(",", "."))
     except (TypeError, ValueError):
         return n
     return str(int(f)) if f.is_integer() else str(f)
+
+
+JENIS_UJI = ("uji_tanpa_rag", "uji_rag")       # baris yang ditulis tombol "Set uji RAG" di halaman utama
+
+
+def susun_pasangan_uji(uji):
+    """Satukan baris uji_tanpa_rag dan uji_rag menjadi satu baris per (model, nomor U01, U02, ...).
+    Kalau satu pertanyaan dijalankan berulang, dipakai rata-ratanya. Hanya pertanyaan yang punya kedua sisi yang ikut."""
+    kolom = ["input_tokens", "output_tokens", "thinking_tokens", "total_tokens"]
+    kunci = ["model", "nomor_kombinasi"]
+    a = uji[uji["jenis"] == "uji_tanpa_rag"]
+    b = uji[uji["jenis"] == "uji_rag"]
+    if a.empty or b.empty:
+        return pd.DataFrame()
+    rata_a = a.groupby(kunci)[kolom].mean()
+    rata_b = b.groupby(kunci)[kolom].mean()
+    pas = rata_a.join(rata_b, how="inner", lsuffix="_tanpa", rsuffix="_rag")
+    if pas.empty:
+        return pd.DataFrame()
+    pas["pertanyaan"] = a.groupby(kunci)["prompt"].last()
+    pas["potongan"] = b.assign(n=b["sumber_wisata"].map(len)).groupby(kunci)["n"].last()      # potongan data wisata yang benar-benar terkirim
+    pas = pas.reset_index()
+    for k in ("input", "output", "thinking", "total"):
+        pas["selisih_" + k] = pas[k + "_tokens_rag"] - pas[k + "_tokens_tanpa"]
+    pas["rasio_total"] = pas["total_tokens_rag"] / pas["total_tokens_tanpa"].where(pas["total_tokens_tanpa"] > 0)
+    pas["urut"] = pas["nomor_kombinasi"].astype(str).str.extract(r"(\d+)")[0].astype(float)
+    return pas.sort_values(["urut", "model"]).drop(columns="urut").reset_index(drop=True)
+
+
+def persen(rag, tanpa):
+    return (rag - tanpa) / tanpa * 100 if tanpa else None
+
+
+def ringkas_kelompok(pas):
+    """Rata-rata per kelompok: pertanyaan yang konteks RAG-nya terkirim, dan yang tidak (di luar data wisata)."""
+    if pas.empty:
+        return pd.DataFrame()
+    baris = []
+    for nama, sub in (("Konteks RAG terkirim", pas[pas["potongan"] > 0]), ("Tidak ada konteks yang cocok", pas[pas["potongan"] == 0])):
+        if sub.empty:
+            continue
+        i_t, i_r = sub["input_tokens_tanpa"].mean(), sub["input_tokens_rag"].mean()
+        t_t, t_r = sub["total_tokens_tanpa"].mean(), sub["total_tokens_rag"].mean()
+        baris.append({"Kelompok": nama, "Pertanyaan": len(sub), "Input tanpa RAG": round(i_t), "Input dengan RAG": round(i_r),
+                      "Selisih input (%)": round(persen(i_r, i_t), 1) if i_t else None,
+                      "Total tanpa RAG": round(t_t), "Total dengan RAG": round(t_r),
+                      "Selisih total (%)": round(persen(t_r, t_t), 1) if t_t else None})
+    return pd.DataFrame(baris)
 
 
 # ---------- 1. TAMPILAN ----------
@@ -201,6 +115,7 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 footer, [data-testid="stDecoration"], [data-testid="stAppDeployButton"], .stAppDeployButton {display: none !important;}
 header[data-testid="stHeader"] {background: transparent;}
@@ -237,29 +152,46 @@ section[data-testid="stSidebar"] h2 {font-family: 'Newsreader', serif; font-weig
     letter-spacing: .16em; line-height: 1;
     background: linear-gradient(135deg, #1A1A1A 0%, #D97757 100%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* ===== sidebar ala Claude: datar, rapat, tanpa kotak-kotak (sama dengan halaman utama) ===== */
+:root { color-scheme: light; }
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] { padding: .5rem .75rem 1rem; }
+section[data-testid="stSidebar"] hr { margin: .7rem 0 !important; border-color: #ECEBE6 !important; }
+[data-testid="stSidebarNav"] a, [data-testid="stSidebarNavLink"] { border-radius: 8px !important; padding: .35rem .65rem !important; font-size: .9rem !important; color: #1A1A1A !important; }
+[data-testid="stSidebarNav"] a:hover, [data-testid="stSidebarNavLink"]:hover { background: #EFEEE9 !important; }
+[data-testid="stSidebarNav"] a[aria-current="page"], [data-testid="stSidebarNavLink"][aria-current="page"] { background: #EAE9E5 !important; font-weight: 600; }
+section[data-testid="stSidebar"] h2 { font-family: 'Inter', sans-serif !important; font-weight: 600; font-size: 1rem; margin: .2rem 0 .4rem .2rem; padding: 0; }
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p { font-size: .8rem; color: #6B6B6B !important; font-weight: 500; }
+section[data-testid="stSidebar"] [data-baseweb="select"] > div { background: #FFFFFF !important; border-color: #E3E1DB !important; border-radius: 8px !important; }
+section[data-testid="stSidebar"] [data-testid="stExpander"] { border: 0 !important; background: transparent !important; }
+section[data-testid="stSidebar"] [data-testid="stExpander"] summary { padding: .45rem .65rem !important; border-radius: 8px; font-size: .9rem; }
+section[data-testid="stSidebar"] [data-testid="stExpander"] summary:hover { background: #EFEEE9; }
+
+/* ===== font: Inter untuk semua teks, Newsreader untuk judul besar, ikon dan kode tidak disentuh ===== */
+html, body, .stApp, .stApp p, .stApp li, .stApp label, .stApp a, .stApp div, .stApp button, .stApp input, .stApp textarea, .stApp select,
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6, .stApp summary, .stApp span:not([data-testid="stIconMaterial"]) {
+    font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif !important; letter-spacing: -0.005em; }
+.stApp pre, .stApp code, .stApp pre *, .stApp pre span:not([data-testid="stIconMaterial"]) {
+    font-family: 'Source Code Pro', Consolas, monospace !important; letter-spacing: 0; }
+.stApp .hero-title, .stApp [data-testid="stMetricValue"], .stApp [data-testid="stMetricValue"] * {
+    font-family: 'Newsreader', Georgia, serif !important; letter-spacing: -0.02em; }
 </style>
 """, unsafe_allow_html=True)
 st.markdown("""
 <div class="hero">
   <div class="hero-title">Dashboard Token</div>
-  <div class="hero-sub">Pemantauan token input, output, dan thinking dari semua percobaan, plus jatah request harian</div>
+  <div class="hero-sub">Pemantauan token input, output, dan thinking dari semua percobaan dan obrolan, termasuk pemakaian RAG</div>
 </div>
 """, unsafe_allow_html=True)
-
-# ---------- 2. PENYEDIA AWAL ----------
-P_AWAL = "Gemini" if (kunci_aktif("Gemini") and not kunci_aktif("Z.ai (GLM)")) else "Z.ai (GLM)"
-
 
 # ---------- 3. BACA DATA ----------
 if not os.path.exists(LOG_FILE):
     st.info("Belum ada data. Jalankan eksperimen di halaman utama dan klik 'Simpan ke log' dulu.")
-    KID = id_kunci(kunci_aktif(P_AWAL))
     st.stop()
 
 df = pd.read_csv(LOG_FILE, dtype={"nomor_kombinasi": str})
 if df.empty:
     st.info("Log masih kosong.")
-    KID = id_kunci(kunci_aktif(P_AWAL))
     st.stop()
 
 for kolom, default in [("anggota", "(tanpa nama)"), ("jenis", "eksperimen")]:
@@ -272,41 +204,61 @@ df["model"] = df["model"].fillna("(tidak tercatat)")
 df["penyedia"] = df["model"].map(penyedia_dari_model)
 for kolom in ["input_tokens", "output_tokens", "thinking_tokens", "total_tokens"]:
     df[kolom] = pd.to_numeric(df[kolom], errors="coerce").fillna(0)
+df["anggota"] = "Semua anggota"                  # nama anggota tidak ditampilkan di dashboard (tabel maupun grafik)
 df["nomor_kombinasi"] = df["nomor_kombinasi"].map(norm_nomor)
+
+kolom_asli = set(df.columns)                      # kolom yang benar-benar ada di log.csv
+for kolom in ("rag", "rag_sumber", "dokumen", "dokumen_sumber", "gambar"):
+    if kolom not in df.columns:                   # log lama belum punya kolom RAG
+        df[kolom] = ""
+    df[kolom] = df[kolom].fillna("").astype(str)
+
+
+def pecah_sumber(teks):
+    return [s.strip() for s in str(teks).split(";") if s.strip()]
+
+
+_rs = df["rag_sumber"].map(pecah_sumber)
+df["sumber_wisata"] = _rs.map(lambda daftar: [s for s in daftar if not s.startswith("[dok]")])       # potongan data/wisata yang terkirim
+df["sumber_dok"] = [[s for s in a if s.startswith("[dok]")] + pecah_sumber(b) for a, b in zip(_rs, df["dokumen_sumber"])]   # potongan dokumen unggahan
+df["pakai_rag"] = df["sumber_wisata"].map(len) > 0
+df["pakai_dok"] = df["sumber_dok"].map(len) > 0
 
 df["percobaan_ke"] = range(1, len(df) + 1)
 df["total_kumulatif"] = df.groupby("anggota")["total_tokens"].cumsum()   # dihitung sebelum difilter
 
 # ---------- 4. SIDEBAR: filter ----------
-st.sidebar.markdown("## 🔎 Filter")
+st.sidebar.markdown("## Filter")
 semua_anggota = sorted(df["anggota"].unique())
-semua_jenis = sorted(df["jenis"].unique())
+semua_jenis = sorted(j for j in df["jenis"].unique() if j not in JENIS_UJI)      # baris set uji tidak ditawarkan di filter; datanya tetap dipakai bagian "Set uji RAG" di tab RAG
 pilih_anggota = semua_anggota          # filter Anggota dihapus: semua anggota ikut dihitung
 pilih_jenis = st.sidebar.multiselect("Jenis", semua_jenis, default=semua_jenis)
+# filter sumber chat dan RAG: sama dengan filter di "Lihat log" pada halaman utama
+_ya = lambda k: df[k].str.lower().eq("ya")
+_chat = df["jenis"].eq("chat")
+_kategori = {"Chat biasa": _chat & ~_ya("dokumen") & ~_ya("gambar"), "Dokumen": _ya("dokumen"), "Gambar": _ya("gambar"),
+             "Eksperimen": ~_chat & ~df["jenis"].eq("saran_dokumen")}
+pilih_sumber = st.sidebar.multiselect("Sumber", list(_kategori), default=list(_kategori))
+pilih_rag = st.sidebar.multiselect("RAG", ["Tanpa RAG", "Dengan RAG"], default=["Tanpa RAG", "Dengan RAG"])
+_ok_sumber = pd.Series(False, index=df.index)
+for _n in pilih_sumber:
+    _ok_sumber |= _kategori[_n]
+_ok_rag = (_ya("rag") & ("Dengan RAG" in pilih_rag)) | (~_ya("rag") & ("Tanpa RAG" in pilih_rag))
 semua_penyedia = sorted(df["penyedia"].unique())
 pilih_penyedia = st.sidebar.multiselect("Penyedia", semua_penyedia,       # awalnya hanya GLM; tambahkan Gemini untuk membandingkan
                                         default=[p for p in semua_penyedia if p == "Z.ai (GLM)"] or semua_penyedia)
 semua_model = sorted(df.loc[df["penyedia"].isin(pilih_penyedia), "model"].unique())
 pilih_model = st.sidebar.multiselect("Model", semua_model, default=semua_model)
 
-# Jatah request mengikuti filter Penyedia. Kalau lebih dari satu penyedia dipilih, pilih salah satu untuk kartu jatah.
-kenal = [p for p in pilih_penyedia if p in CFG] or [P_AWAL]
-if len(kenal) > 1:
-    penyedia_jatah = st.sidebar.selectbox("Jatah request untuk", kenal, key="penyedia_jatah")
-else:
-    penyedia_jatah = kenal[0]
-CP = CFG[penyedia_jatah]
-KID = id_kunci(kunci_aktif(penyedia_jatah))      # semua hitungan jatah di bawah memakai API key penyedia ini
-
-d = df[df["anggota"].isin(pilih_anggota) & df["jenis"].isin(pilih_jenis)
+d = df[df["anggota"].isin(pilih_anggota) & df["jenis"].isin(pilih_jenis) & _ok_sumber & _ok_rag
        & df["penyedia"].isin(pilih_penyedia) & df["model"].isin(pilih_model)]
 if d.empty:
     st.warning("Tidak ada data untuk filter ini.")
     st.stop()
 eks = d[(d["jenis"] == "eksperimen") & d["nomor_kombinasi"].notna()].copy()
 
-tab_ringkas, tab_model, tab_kombinasi, tab_analisis, tab_data = st.tabs(
-    ["📊 Ringkasan", "🤖 Per model", "🧩 Per kombinasi", "🔬 Analisis", "📄 Data"])
+tab_ringkas, tab_model, tab_kombinasi, tab_analisis, tab_data, tab_rag = st.tabs(
+    ["Ringkasan", "Per model", "Per kombinasi", "Analisis", "Data", "RAG"])
 
 # ===== TAB RINGKASAN =====
 with tab_ringkas:
@@ -466,13 +418,14 @@ with tab_analisis:
 
 # ===== TAB DATA =====
 with tab_data:
-    kolom = ["percobaan_ke", "waktu", "anggota", "jenis", "model", "nomor_kombinasi", "input_tokens",
+    kolom = ["percobaan_ke", "waktu", "jenis", "model", "nomor_kombinasi", "input_tokens",
              "output_tokens", "thinking_tokens", "total_tokens", "total_kumulatif", "kualitas"]
+    kolom += [k for k in ("rag", "rag_sumber", "dokumen", "dokumen_sumber", "rag_metode") if k in kolom_asli]
     tabel = d[[k for k in kolom if k in d.columns]]
     st.dataframe(tabel, hide_index=True)
-    st.download_button("⬇️ Download CSV", tabel.to_csv(index=False), "log_dashboard.csv", "text/csv")
+    st.download_button("Download CSV (sesuai filter)", tabel.to_csv(index=False).encode("utf-8-sig"), "log_dashboard.csv", "text/csv")
 
-    st.markdown("#### 🔍 Detail satu percobaan")
+    st.markdown("#### Detail satu percobaan")
     label = {int(r.percobaan_ke): f"#{int(r.percobaan_ke)} | {r.model} | {r.nomor_kombinasi} | {int(r.total_tokens):,} token"
              for r in d.itertuples()}
     pilih = st.selectbox("Pilih percobaan", list(label), format_func=lambda i: label[i], key="detail")
@@ -484,3 +437,167 @@ with tab_data:
         st.write(baris.get("jawaban", "-"))
         st.caption("Penilaian kualitas")
         st.write(baris.get("kualitas", "-"))
+
+
+# ===== TAB RAG =====
+with tab_rag:
+    st.caption("Membandingkan token dengan dan tanpa konteks RAG. 'Dengan konteks' berarti potongan data wisata benar-benar ikut terkirim ke model, "
+               "bukan sekadar RAG menyala. Tab ini mengikuti filter Penyedia dan Model, tetapi tidak filter Jenis.")
+    semua = df[df["penyedia"].isin(pilih_penyedia) & df["model"].isin(pilih_model)]
+
+    # ---- 0. Set uji RAG: tiap pertanyaan tanpa dan dengan RAG ----
+    uji = semua[semua["jenis"].isin(JENIS_UJI)]
+    pas = susun_pasangan_uji(uji)
+    if not pas.empty:
+        st.markdown("#### Set uji RAG: pertanyaan yang sama, tanpa dan dengan RAG")
+        i_t, i_r = pas["input_tokens_tanpa"].mean(), pas["input_tokens_rag"].mean()
+        t_t, t_r = pas["total_tokens_tanpa"].mean(), pas["total_tokens_rag"].mean()
+        u1, u2, u3, u4 = st.columns(4)
+        u1.metric("Pertanyaan yang dibandingkan", len(pas))
+        u2.metric("Rata-rata input tanpa RAG", f"{int(i_t):,}")
+        u3.metric("Rata-rata input dengan RAG", f"{int(i_r):,}",
+                  delta=f"{persen(i_r, i_t):+.0f}% dibanding tanpa RAG" if i_t else None, delta_color="off")
+        u4.metric("Rata-rata total dengan RAG", f"{int(t_r):,}",
+                  delta=f"{persen(t_r, t_t):+.0f}% dibanding {int(t_t):,} tanpa RAG" if t_t else None, delta_color="off",
+                  help="Total = input + output + thinking. Thinking bervariasi antar panggilan, jadi total lebih berisik daripada input.")
+
+        ringkas = ringkas_kelompok(pas)
+        if len(ringkas) > 1:
+            st.caption("Dipisah menurut apakah RAG benar-benar menempelkan potongan. Pertanyaan di luar data wisata seharusnya hampir tidak berbeda.")
+            st.dataframe(ringkas, hide_index=True)
+
+        WARNA_UJI = {"Tanpa RAG": "#B8B5AD", "Dengan RAG": "#D97757"}
+        banyak_model_u = pas["model"].nunique() > 1
+        pas["Label"] = pas["nomor_kombinasi"].astype(str) + (" · " + pas["model"] if banyak_model_u else "")
+        bentuk = pas.melt(id_vars="Label", value_vars=["input_tokens_tanpa", "input_tokens_rag"], var_name="Kondisi", value_name="Token input")
+        bentuk["Kondisi"] = bentuk["Kondisi"].map({"input_tokens_tanpa": "Tanpa RAG", "input_tokens_rag": "Dengan RAG"})
+        grafik_u = px.bar(bentuk, x="Label", y="Token input", color="Kondisi", barmode="group", color_discrete_map=WARNA_UJI,
+                          labels={"Label": "Pertanyaan (U01, U02, ...)"})
+        grafik_u.update_xaxes(type="category")
+        st.plotly_chart(rapikan(grafik_u, "Token input per pertanyaan: tanpa dan dengan RAG", 340))
+
+        tabel_u = pas.assign(Pertanyaan=pas["pertanyaan"].astype(str).str.slice(0, 70))[
+            ["nomor_kombinasi", "Pertanyaan", "potongan", "input_tokens_tanpa", "input_tokens_rag", "selisih_input",
+             "total_tokens_tanpa", "total_tokens_rag", "selisih_total", "rasio_total"]].rename(columns={
+            "nomor_kombinasi": "No", "potongan": "Potongan terkirim", "input_tokens_tanpa": "Input tanpa RAG",
+            "input_tokens_rag": "Input dengan RAG", "selisih_input": "Selisih input", "total_tokens_tanpa": "Total tanpa RAG",
+            "total_tokens_rag": "Total dengan RAG", "selisih_total": "Selisih total", "rasio_total": "Rasio total (x)"})
+        for k in ["Input tanpa RAG", "Input dengan RAG", "Selisih input", "Total tanpa RAG", "Total dengan RAG", "Selisih total"]:
+            tabel_u[k] = tabel_u[k].round(0).astype(int)
+        tabel_u["Rasio total (x)"] = tabel_u["Rasio total (x)"].round(2)
+        st.dataframe(tabel_u, hide_index=True)
+        st.download_button("Download CSV set uji", tabel_u.to_csv(index=False).encode("utf-8-sig"), "set_uji_rag.csv", "text/csv",
+                           key="unduh_uji")           # utf-8-sig supaya langsung terbaca benar di Excel
+
+        kunci_a = uji[uji["jenis"] == "uji_tanpa_rag"][["model", "nomor_kombinasi"]].drop_duplicates()
+        kunci_b = uji[uji["jenis"] == "uji_rag"][["model", "nomor_kombinasi"]].drop_duplicates()
+        if len(kunci_a) != len(pas) or len(kunci_b) != len(pas):
+            st.caption("Ada pertanyaan yang baru punya satu sisi (belum selesai dijalankan), jadi tidak ikut dibandingkan.")
+        st.caption("Selisih positif berarti dengan RAG memakai lebih banyak token. Angka ini dari satu kali jalan per pertanyaan; "
+                   "token thinking bervariasi, jadi ulangi set uji beberapa kali untuk rata-rata yang lebih stabil.")
+
+    ada_rag = semua["pakai_rag"] | semua["pakai_dok"] | (semua["jenis"] == "eksperimen_rag")
+    if not ada_rag.any():
+        st.info("Belum ada data RAG. Kirim pertanyaan di mode Chat (RAG data wisata atau dokumen unggahan) atau jalankan Eksperimen dengan RAG menyala, "
+                "lalu muat ulang halaman ini.")
+    else:
+        kolom_token = ["input_tokens", "output_tokens", "thinking_tokens", "total_tokens"]
+        nama_token = {"input_tokens": "Input", "output_tokens": "Output", "thinking_tokens": "Thinking", "total_tokens": "Total"}
+        WARNA_KEL = {"Tanpa konteks RAG": "#B8B5AD", "Dengan konteks RAG": "#D97757"}
+
+        # ---- 1. Chat: dengan vs tanpa konteks ----
+        st.markdown("#### Chat: dengan dan tanpa konteks RAG")
+        chat = semua[(semua["jenis"] == "chat") & ~semua["pakai_dok"]]
+        kel = chat.assign(Kelompok=chat["pakai_rag"].map({True: "Dengan konteks RAG", False: "Tanpa konteks RAG"}))
+        if kel["Kelompok"].nunique() < 2:
+            st.info("Perbandingan butuh obrolan di kedua kelompok (dengan dan tanpa konteks RAG), dan belum ada. "
+                    "Obrolan yang memakai dokumen unggahan sengaja tidak dihitung di sini.")
+        else:
+            rata = kel.groupby("Kelompok")[kolom_token].mean()
+            jml = kel["Kelompok"].value_counts()
+            m1, m2, m3 = st.columns(3)
+            m1.metric("Obrolan dengan konteks", int(jml.get("Dengan konteks RAG", 0)))
+            m2.metric("Obrolan tanpa konteks", int(jml.get("Tanpa konteks RAG", 0)))
+            i_rag, i_tanpa = rata.loc["Dengan konteks RAG", "input_tokens"], rata.loc["Tanpa konteks RAG", "input_tokens"]
+            m3.metric("Rata-rata token input dengan konteks", f"{int(i_rag):,}",
+                      delta=f"{(i_rag - i_tanpa) / i_tanpa * 100:+.0f}% dibanding tanpa konteks" if i_tanpa else None, delta_color="off")
+            panjang = (rata.rename(columns=nama_token).reset_index()
+                       .melt(id_vars="Kelompok", value_vars=["Input", "Output", "Thinking"], var_name="Jenis token", value_name="Rata-rata token"))
+            grafik = px.bar(panjang, x="Jenis token", y="Rata-rata token", color="Kelompok", barmode="group", color_discrete_map=WARNA_KEL)
+            st.plotly_chart(rapikan(grafik, "Rata-rata token per jawaban (chat)", 320))
+            st.caption("Pertanyaan di kedua kelompok berbeda, jadi ini perbandingan kasar.")
+
+        # ---- 2. Pasangan eksperimen ----
+        dasar, dengan = semua[semua["jenis"] == "eksperimen"], semua[semua["jenis"] == "eksperimen_rag"]
+        a = dasar.groupby(["model", "nomor_kombinasi"])[kolom_token].mean()
+        b = dengan.groupby(["model", "nomor_kombinasi"])[kolom_token].mean()
+        pas = a.join(b, how="inner", lsuffix="_tanpa", rsuffix="_rag").reset_index()
+        if not pas.empty:
+            st.markdown("#### Pasangan eksperimen: nomor kombinasi dan model yang sama")
+            for k in kolom_token:
+                pas["Selisih " + nama_token[k].lower()] = pas[k + "_rag"] - pas[k + "_tanpa"]
+            banyak_model = pas["model"].nunique() > 1
+            pas["Kombinasi"] = pas["nomor_kombinasi"] + (" · " + pas["model"] if banyak_model else "")
+            p1, p2 = st.columns(2)
+            p1.metric("Pasangan yang bisa dibandingkan", len(pas))
+            p2.metric("Rata-rata selisih token input", f"{pas['Selisih input'].mean():+,.0f}")
+            lebar = (pas.melt(id_vars="Kombinasi", value_vars=["Selisih input", "Selisih output", "Selisih thinking"],
+                              var_name="Jenis token", value_name="Selisih token")
+                     .assign(**{"Jenis token": lambda x: x["Jenis token"].str.replace("Selisih ", "").str.capitalize()}))
+            grafik = px.bar(lebar, x="Kombinasi", y="Selisih token", color="Jenis token", barmode="group", color_discrete_map=WARNA)
+            grafik.update_xaxes(type="category")
+            st.plotly_chart(rapikan(grafik, "Selisih token: dengan RAG dikurangi tanpa RAG", 340))
+            tampil = pas[["Kombinasi", "input_tokens_tanpa", "input_tokens_rag", "Selisih input", "Selisih output", "Selisih thinking", "Selisih total"]]
+            tampil = tampil.rename(columns={"input_tokens_tanpa": "Input tanpa RAG", "input_tokens_rag": "Input dengan RAG"})
+            st.dataframe(tampil.round(0), hide_index=True)
+            st.caption("Bernilai positif berarti dengan RAG memakai lebih banyak token. Kalau satu kombinasi dijalankan berkali-kali, yang dipakai rata-ratanya.")
+
+            with st.expander("Bandingkan jawaban dan penilaian kualitas"):
+                opsi = {f"{r.nomor_kombinasi} · {r.model}": (r.model, r.nomor_kombinasi) for r in pas.itertuples()}
+                pilih_p = st.selectbox("Pilih pasangan", list(opsi), key="pasangan_rag")
+                mdl, nmr = opsi[pilih_p]
+                tanpa_b = dasar[(dasar["model"] == mdl) & (dasar["nomor_kombinasi"] == nmr)].iloc[-1]
+                rag_b = dengan[(dengan["model"] == mdl) & (dengan["nomor_kombinasi"] == nmr)].iloc[-1]
+                ka, kb = st.columns(2)
+                for kolom_ui, judul, baris in ((ka, "Tanpa RAG", tanpa_b), (kb, "Dengan RAG", rag_b)):
+                    with kolom_ui, st.container(border=True):
+                        st.markdown(f"**{judul}**")
+                        st.caption(f"{int(baris['input_tokens']):,} input | {int(baris['output_tokens']):,} output | {int(baris['thinking_tokens']):,} thinking")
+                        if judul == "Dengan RAG":
+                            st.caption("Sumber: " + (baris["rag_sumber"] or "(tidak ada konteks yang cocok)"))
+                        st.caption("Jawaban")
+                        st.write(baris.get("jawaban", "-"))
+                        st.caption("Penilaian kualitas")
+                        st.write(baris.get("kualitas", "-"))
+
+        # ---- 3. Sumber paling sering terambil ----
+        st.markdown("#### Sumber yang paling sering terambil")
+        hitung = {}
+        for daftar in semua["sumber_wisata"]:
+            for s in daftar:
+                hitung[s] = hitung.get(s, 0) + 1
+        if not hitung:
+            st.info("Belum ada potongan data wisata yang terambil.")
+        else:
+            top = pd.DataFrame(sorted(hitung.items(), key=lambda x: -x[1])[:10], columns=["Potongan", "Jumlah"]).iloc[::-1]
+            grafik = px.bar(top, x="Jumlah", y="Potongan", orientation="h", color_discrete_sequence=[C_OUT])
+            st.plotly_chart(rapikan(grafik, "10 potongan data wisata teratas", 60 + 34 * len(top)))
+
+        # ---- 4. Dokumen unggahan ----
+        st.markdown("#### Dokumen unggahan")
+        dok = semua[semua["pakai_dok"]]
+        if dok.empty:
+            st.info("Belum ada obrolan yang memakai dokumen unggahan.")
+        else:
+            tanpa_dok = semua[(semua["jenis"] == "chat") & ~semua["pakai_dok"]]
+            q1, q2 = st.columns(2)
+            q1.metric("Request dengan dokumen", len(dok))
+            i_dok = dok["input_tokens"].mean()
+            q2.metric("Rata-rata token input dengan dokumen", f"{int(i_dok):,}",
+                      delta=(f"{(i_dok - tanpa_dok['input_tokens'].mean()) / tanpa_dok['input_tokens'].mean() * 100:+.0f}% dibanding chat tanpa dokumen"
+                             if len(tanpa_dok) and tanpa_dok["input_tokens"].mean() else None), delta_color="off")
+
+        # ---- 5. Tabel baris RAG ----
+        st.markdown("#### Semua baris yang memakai RAG atau dokumen")
+        isi = semua[ada_rag][["waktu", "jenis", "model", "nomor_kombinasi", "input_tokens", "total_tokens", "rag_sumber", "dokumen_sumber"]]
+        st.dataframe(isi.rename(columns={"input_tokens": "token_input", "total_tokens": "token_total"}), hide_index=True)
